@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Box, useTheme } from '@mui/material';
 
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 
 import { CENTER } from 'utils/style';
 import GLMR from './Chains/GLMR';
@@ -28,6 +28,7 @@ import MEZO from './Chains/MEZO';
 import LINEA from './Chains/LINEA';
 import HYPERCORE from './Chains/HYPERCORE';
 import SONIC from './Chains/SONIC';
+import STRAX from './Chains/STRAX';
 import SEIEVM from './Chains/SEIEVM';
 import PLUME from './Chains/PLUME';
 import FOGO from './Chains/FOGO';
@@ -72,6 +73,7 @@ const iconMap: { [key in Chain]?: React.JSX.Element } = {
   CreditCoin: CreditCoin(),
   Monad: MONAD(),
   Moca: MOCA(),
+  Xertra: STRAX(),
 };
 
 function isBuiltinChainIcon(icon?: Chain | string): icon is Chain {

@@ -8,8 +8,8 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import type { Chain } from '@wormhole-foundation/sdk';
-import { amount as sdkAmount, isSameToken } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import { amount as sdkAmount, isSameToken } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import type { RootState } from 'store';

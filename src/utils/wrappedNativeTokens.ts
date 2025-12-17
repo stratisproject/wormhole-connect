@@ -1,6 +1,10 @@
-import type { Chain, Network, TokenAddress } from '@wormhole-foundation/sdk';
-import { chainToPlatform, isNative } from '@wormhole-foundation/sdk';
-import { WETH_CONTRACTS } from '@wormhole-foundation/sdk-evm';
+import type {
+  Chain,
+  Network,
+  TokenAddress,
+} from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform, isNative } from '@xertraplatform/wormhole-sdk';
+import { WETH_CONTRACTS } from '@xertraplatform/wormhole-sdk-evm';
 
 const WSOL_ADDRESS = 'So11111111111111111111111111111111111111112';
 

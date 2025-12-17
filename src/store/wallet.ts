@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import type { Platform } from '@wormhole-foundation/sdk';
+import type { Platform } from '@xertraplatform/wormhole-sdk';
 import { TransferWallet } from 'utils/wallet';
 import { ReadOnlyWallet } from 'utils/wallet/ReadOnlyWallet';
 

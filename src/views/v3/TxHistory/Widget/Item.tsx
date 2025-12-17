@@ -32,7 +32,7 @@ import {
 } from 'store/redeem';
 import { setRoute as setAppRoute } from 'store/router';
 import { setToChain } from 'store/transferInput';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import { removeTxFromLocalStorage } from 'utils/inProgressTxCache';
 import { getTokenDisplaySymbolByTokenAddress } from 'utils';
 import { minutesAndSecondsWithPadding } from 'utils/transferValidation';

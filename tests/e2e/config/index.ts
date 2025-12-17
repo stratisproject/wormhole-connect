@@ -1,4 +1,4 @@
-import { circle } from '@wormhole-foundation/sdk';
+import { circle } from '@xertraplatform/wormhole-sdk';
 import type { TestConfig } from './types';
 
 const mayanSWIFT = `{

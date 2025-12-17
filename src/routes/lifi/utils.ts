@@ -10,13 +10,13 @@ import type {
   TokenId,
   TransactionId,
   Network,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   Wormhole,
   chainToPlatform,
   isNative,
   nativeChainIds,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   LIFI_NATIVE_ADDRESS_EVM,
   LIFI_NATIVE_ADDRESS_SVM,

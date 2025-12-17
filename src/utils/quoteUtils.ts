@@ -1,4 +1,4 @@
-import type { routes } from '@wormhole-foundation/sdk';
+import type { routes } from '@xertraplatform/wormhole-sdk';
 
 export function getSlippageFromQuote(
   quote: routes.QuoteResult<routes.Options> | undefined,

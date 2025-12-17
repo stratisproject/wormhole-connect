@@ -2,8 +2,8 @@ export {
   cctpExecutorRoute,
   cctpV2StandardExecutorRoute,
   cctpV2FastExecutorRoute,
-} from '@wormhole-labs/cctp-executor-route';
+} from '@xertraplatform/cctp-executor-route';
 
-import { routes } from '@wormhole-foundation/sdk';
+import { routes } from '@xertraplatform/wormhole-sdk';
 const { executorTokenBridgeRoute } = routes;
 export { executorTokenBridgeRoute };

@@ -1,5 +1,5 @@
-import type { Chain } from '@wormhole-foundation/sdk';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import { getGasToken } from 'utils';

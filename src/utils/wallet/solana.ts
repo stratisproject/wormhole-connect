@@ -31,8 +31,8 @@ import config from 'config';
 
 const CONFIRMATION_PROMISE_TIMER = 3_000; // How long to wait for confirmation before resending
 
-import type { SolanaUnsignedTransaction } from '@wormhole-foundation/sdk-solana';
-import type { Chain, Network } from '@wormhole-foundation/sdk';
+import type { SolanaUnsignedTransaction } from '@xertraplatform/wormhole-sdk-solana';
+import type { Chain, Network } from '@xertraplatform/wormhole-sdk';
 import { setPriorityFeeInstructions } from 'utils/solana';
 import { retry } from 'es-toolkit';
 import { stringifyWithBigInt } from 'utils';

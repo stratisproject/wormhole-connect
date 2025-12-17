@@ -1,4 +1,4 @@
-import type { routes, Network } from '@wormhole-foundation/sdk';
+import type { routes, Network } from '@xertraplatform/wormhole-sdk';
 
 export type QuoteMetadata = {
   quote: routes.QuoteResult<routes.Options>;

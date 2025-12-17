@@ -1,4 +1,4 @@
-import { type Chain } from '@wormhole-foundation/sdk';
+import { type Chain } from '@xertraplatform/wormhole-sdk';
 
 export const WORMSCAN = 'https://wormholescan.io/#/';
 

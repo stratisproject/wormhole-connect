@@ -9,8 +9,8 @@ import CardHeader from '@mui/material/CardHeader';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import type { routes } from '@wormhole-foundation/sdk';
-import { amount } from '@wormhole-foundation/sdk';
+import type { routes } from '@xertraplatform/wormhole-sdk';
+import { amount } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import { useGasSlider } from 'hooks/useGasSlider';

@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 
 type SearchState = {
   txHash?: string;

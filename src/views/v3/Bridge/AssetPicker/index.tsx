@@ -4,8 +4,8 @@ import { Box, TextField, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { usePopupState, bindTrigger } from 'material-ui-popup-state/hooks';
 import Typography from '@mui/material/Typography';
-import type { Chain, routes } from '@wormhole-foundation/sdk';
-import { amount as sdkAmount, isSameToken } from '@wormhole-foundation/sdk';
+import type { Chain, routes } from '@xertraplatform/wormhole-sdk';
+import { amount as sdkAmount, isSameToken } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import type { ChainConfig } from 'config/types';

@@ -5,13 +5,13 @@ import { isValidTransactionDigest } from '@mysten/sui/utils';
 import config from 'config';
 import type { ChainConfig } from 'config/types';
 import type { Token } from 'config/tokens';
-import type { Chain, Platform } from '@wormhole-foundation/sdk';
+import type { Chain, Platform } from '@xertraplatform/wormhole-sdk';
 import {
   chainToPlatform,
   isSameToken,
   amount as sdkAmount,
   Wormhole,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import { getWrappedNativeToken } from './wrappedNativeTokens';
 
 export const MAX_DECIMALS = 6;
@@ -403,6 +403,7 @@ export const isFrankensteinToken = (token: Token, chain: Chain) => {
     }
   }
 
+  return false;
   return (
     nativeChain !== 'Ethereum' &&
     ['ETH', 'WETH', 'wstETH', 'USDT', 'USDC', 'USDC.e'].includes(symbol)

@@ -6,8 +6,8 @@ import {
   useDeferredValue,
   startTransition,
 } from 'react';
-import { amount as sdkAmount, toNative } from '@wormhole-foundation/sdk';
-import type { Chain } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount, toNative } from '@xertraplatform/wormhole-sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { Token } from 'config/tokens';
 import config from 'config';
 import { useTokens } from 'contexts/TokensContext';

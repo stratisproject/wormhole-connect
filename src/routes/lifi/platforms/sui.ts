@@ -1,10 +1,10 @@
 import type { Route } from '@lifi/sdk';
 import { getStepTransaction } from '@lifi/sdk';
-import type { Network } from '@wormhole-foundation/sdk-connect';
+import type { Network } from '@xertraplatform/wormhole-sdk-connect';
 import {
   SuiPlatform,
   SuiUnsignedTransaction,
-} from '@wormhole-foundation/sdk-sui';
+} from '@xertraplatform/wormhole-sdk-sui';
 import { Transaction } from '@mysten/sui/transactions';
 import { fromBase64 } from '@mysten/sui/utils';
 import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';

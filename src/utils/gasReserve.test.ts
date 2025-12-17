@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import { getGasReserve } from './gasReserve';
 
 describe('getGasReserve', () => {

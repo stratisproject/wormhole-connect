@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Skeleton, Stack, Typography } from '@mui/material';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import { useTheme } from '@mui/material/styles';
 
 const TokenBalance = ({

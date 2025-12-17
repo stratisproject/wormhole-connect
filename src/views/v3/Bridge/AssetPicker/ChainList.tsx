@@ -11,7 +11,7 @@ import ChainIcon from 'icons/ChainIcons';
 import SearchableList from 'views/v3/Bridge/AssetPicker/SearchableList';
 import ChainShortList from 'views/v3/Bridge/AssetPicker/ChainShortList';
 
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { ChainConfig } from 'config/types';
 import type { WalletData } from 'store/wallet';
 

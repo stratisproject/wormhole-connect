@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import { type Chain } from '@wormhole-foundation/sdk';
+import { type Chain } from '@xertraplatform/wormhole-sdk';
 
 import type { ChainConfig } from 'config/types';
 import type { WalletData } from 'store/wallet';

@@ -3,7 +3,7 @@
 # Update SDK Packages
 # Updates all Wormhole SDK packages to the specified version (if provided), creates a new branch,
 # and commits the changes with a predefined commit message. If no version is provided, the latest version
-# of @wormhole-foundation/sdk will be fetched from the registry.
+# of @xertraplatform/wormhole-sdk will be fetched from the registry.
 
 # bun run sdk:update
 # → Finds latest SDK version (X.Y.Z)
@@ -29,8 +29,8 @@ SEMVER_REGEX="^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$"
 
 # If no args → grab latest version, default branch naming
 if [ -z "$1" ]; then
-  echo "⚠️  No version or ticket provided. Finding most recent @wormhole-foundation/sdk version..."
-  VERSION=$(bun pm view @wormhole-foundation/sdk version 2>/dev/null || npm view @wormhole-foundation/sdk version)
+  echo "⚠️  No version or ticket provided. Finding most recent @xertraplatform/wormhole-sdk version..."
+  VERSION=$(bun pm view @xertraplatform/wormhole-sdk version 2>/dev/null || npm view @xertraplatform/wormhole-sdk version)
   BRANCH_NAME="update-sdk-$VERSION"
   echo "✅ Using latest version: $VERSION"
 else
@@ -40,7 +40,7 @@ else
     BRANCH_NAME="${2:-update-sdk-$VERSION}"
   else
     # First arg is not a semver → treat as ticket
-    VERSION=$(bun pm view @wormhole-foundation/sdk version 2>/dev/null || npm view @wormhole-foundation/sdk version)
+    VERSION=$(bun pm view @xertraplatform/wormhole-sdk version 2>/dev/null || npm view @xertraplatform/wormhole-sdk version)
     BRANCH_NAME="$1"
     echo "⚠️  First argument '$1' is not a version. Using latest SDK version: $VERSION"
   fi
@@ -59,21 +59,21 @@ const version = '$VERSION';
 
 // SDK packages to update in dependencies
 const sdkPackages = [
-  '@wormhole-foundation/sdk',
-  '@wormhole-foundation/sdk-aptos',
-  '@wormhole-foundation/sdk-aptos-core',
-  '@wormhole-foundation/sdk-base',
-  '@wormhole-foundation/sdk-connect',
-  '@wormhole-foundation/sdk-definitions',
-  '@wormhole-foundation/sdk-evm',
-  '@wormhole-foundation/sdk-evm-core',
-  '@wormhole-foundation/sdk-icons',
-  '@wormhole-foundation/sdk-solana',
-  '@wormhole-foundation/sdk-solana-cctp',
-  '@wormhole-foundation/sdk-solana-core',
-  '@wormhole-foundation/sdk-sui',
-  '@wormhole-foundation/sdk-sui-cctp',
-  '@wormhole-foundation/sdk-sui-core',
+  '@xertraplatform/wormhole-sdk',
+  '@xertraplatform/wormhole-sdk-aptos',
+  '@xertraplatform/wormhole-sdk-aptos-core',
+  '@xertraplatform/wormhole-sdk-base',
+  '@xertraplatform/wormhole-sdk-connect',
+  '@xertraplatform/wormhole-sdk-definitions',
+  '@xertraplatform/wormhole-sdk-evm',
+  '@xertraplatform/wormhole-sdk-evm-core',
+  '@xertraplatform/wormhole-sdk-icons',
+  '@xertraplatform/wormhole-sdk-solana',
+  '@xertraplatform/wormhole-sdk-solana-cctp',
+  '@xertraplatform/wormhole-sdk-solana-core',
+  '@xertraplatform/wormhole-sdk-sui',
+  '@xertraplatform/wormhole-sdk-sui-cctp',
+  '@xertraplatform/wormhole-sdk-sui-core',
 ];
 
 // Update dependencies
@@ -90,11 +90,11 @@ if (pkg.overrides) {
       if (typeof value === 'object' && value !== null) {
         // Recursively update nested overrides
         for (const [nestedKey, nestedValue] of Object.entries(value)) {
-          if (nestedKey.startsWith('@wormhole-foundation/sdk') && !nestedKey.includes('-ntt')) {
+          if (nestedKey.startsWith('@xertraplatform/wormhole-sdk') && !nestedKey.includes('-ntt')) {
             value[nestedKey] = version;
           }
         }
-      } else if (key.startsWith('@wormhole-foundation/sdk') && !key.includes('-ntt')) {
+      } else if (key.startsWith('@xertraplatform/wormhole-sdk') && !key.includes('-ntt')) {
         obj[key] = version;
       }
     }

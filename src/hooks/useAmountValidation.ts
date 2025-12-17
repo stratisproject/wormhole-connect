@@ -1,4 +1,4 @@
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import type { QuoteResult } from 'routes/operator';

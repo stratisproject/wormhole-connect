@@ -8,11 +8,11 @@ import type {
   TxHash,
   RpcConnection,
   Platform,
-} from '@wormhole-foundation/sdk';
-import { chainToPlatform, amount } from '@wormhole-foundation/sdk';
-import { getEvmSigner } from '@wormhole-foundation/sdk-evm';
-import { getSolanaSigner } from '@wormhole-foundation/sdk-solana';
-import { getSuiSigner } from '@wormhole-foundation/sdk-sui';
+} from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform, amount } from '@xertraplatform/wormhole-sdk';
+import { getEvmSigner } from '@xertraplatform/wormhole-sdk-evm';
+import { getSolanaSigner } from '@xertraplatform/wormhole-sdk-solana';
+import { getSuiSigner } from '@xertraplatform/wormhole-sdk-sui';
 
 import { getWormholeContextV2 } from 'config';
 import type { TransferWallet } from 'utils/wallet';

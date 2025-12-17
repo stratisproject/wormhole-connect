@@ -1,4 +1,4 @@
-import { amount } from '@wormhole-foundation/sdk-base';
+import { amount } from '@xertraplatform/wormhole-sdk-base';
 
 /**
  * Makes a BigNumber have # of decimals

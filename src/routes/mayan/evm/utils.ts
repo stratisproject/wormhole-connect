@@ -1,5 +1,5 @@
 import { addresses } from '@mayanfinance/swap-sdk';
-import type { Network } from '@wormhole-foundation/sdk-connect';
+import type { Network } from '@xertraplatform/wormhole-sdk-connect';
 import type { TransactionRequest } from 'ethers';
 import { ethers } from 'ethers';
 import { MayanForwarderShimContractABI } from './abi';

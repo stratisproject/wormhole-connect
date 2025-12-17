@@ -16,8 +16,8 @@ import type { RelayState } from 'store/relay';
 import { walletAcceptedChains } from './wallet';
 import { useDispatch, useSelector } from 'react-redux';
 import { useDebounce } from 'use-debounce';
-import type { Chain } from '@wormhole-foundation/sdk';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 export const validateFromChain = (chain: Chain | undefined): ValidationErr => {
   if (!chain) return 'Select a source chain';

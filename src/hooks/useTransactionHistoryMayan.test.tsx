@@ -21,7 +21,7 @@ vi.mock('config', () => ({
   },
 }));
 
-vi.mock('@wormhole-foundation/sdk', () => ({
+vi.mock('@xertraplatform/wormhole-sdk', () => ({
   chainIdToChain: vi.fn((chainId) => {
     const chainMap: Record<number, string> = {
       1: 'Ethereum',

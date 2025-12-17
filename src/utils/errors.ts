@@ -15,7 +15,7 @@ import {
   ERR_RELAY_FAILED,
   ERR_SLIPPAGE_EXCEEDED,
 } from 'telemetry/types';
-import { routes, amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { routes, amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import {
   chainDisplayName,
   getGasToken,

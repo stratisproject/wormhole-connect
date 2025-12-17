@@ -1,11 +1,11 @@
-import type { amount as sdkAmount } from '@wormhole-foundation/sdk';
-import { isSameToken } from '@wormhole-foundation/sdk';
+import type { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
+import { isSameToken } from '@xertraplatform/wormhole-sdk';
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from 'store';
 import { partition } from 'es-toolkit';
-import type { Chain, Network, routes } from '@wormhole-foundation/sdk';
-import { Wormhole, circle, amount } from '@wormhole-foundation/sdk';
+import type { Chain, Network, routes } from '@xertraplatform/wormhole-sdk';
+import { Wormhole, circle, amount } from '@xertraplatform/wormhole-sdk';
 import type { QuoteParams, QuoteResult } from 'routes/operator';
 import { calculateUSDPriceRaw } from 'utils';
 

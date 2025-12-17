@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import type { Network, routes } from '@wormhole-foundation/sdk';
+import type { Network, routes } from '@xertraplatform/wormhole-sdk';
 
 interface RouteContextType {
   route: routes.Route<Network> | null;

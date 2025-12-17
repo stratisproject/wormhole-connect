@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import type { routes } from '@wormhole-foundation/sdk';
+import type { routes } from '@xertraplatform/wormhole-sdk';
 
 import Button from 'components/v3/Button';
 import RoutesList from './RoutesList';

@@ -14,8 +14,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import CopyIcon from '@mui/icons-material/ContentCopy';
 import DoneIcon from '@mui/icons-material/Done';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
-import type { Chain } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 
 import AlertBannerV3 from 'components/v3/AlertBanner';
 import Button from 'components/v3/Button';

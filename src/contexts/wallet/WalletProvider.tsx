@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
-import type { Chain } from '@wormhole-foundation/sdk';
-import { chainToPlatform } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
 import { useDispatch } from 'react-redux';
 import config from 'config';
 import type { Wallet, WormholeConnectWalletProvider } from 'utils/wallet';

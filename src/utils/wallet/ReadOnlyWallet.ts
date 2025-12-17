@@ -5,8 +5,8 @@ import type {
   SendTransactionResult,
 } from '@wormhole-labs/wallet-aggregator-core';
 import { Wallet } from '@wormhole-labs/wallet-aggregator-core';
-import type { Chain, NativeAddress } from '@wormhole-foundation/sdk';
-import { chainToChainId } from '@wormhole-foundation/sdk';
+import type { Chain, NativeAddress } from '@xertraplatform/wormhole-sdk';
+import { chainToChainId } from '@xertraplatform/wormhole-sdk';
 
 export class ReadOnlyWallet extends Wallet {
   private _isConnected = true;

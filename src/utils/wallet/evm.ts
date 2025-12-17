@@ -13,8 +13,8 @@ import {
 import type {
   EvmUnsignedTransaction,
   EvmChains,
-} from '@wormhole-foundation/sdk-evm';
-import type { Network } from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk-evm';
+import type { Network } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import * as ethers from 'ethers';

@@ -11,12 +11,12 @@ import type {
   TokenId,
   Network,
   Signer,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import {
   isUnattestedTokenId,
   routes,
   amount as sdkAmount,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 
 import SDKv2Route from './sdkv2/route';
 import type { QuoteMetadata } from './types';
@@ -160,7 +160,7 @@ export default class RouteOperator {
   ): Promise<TokenId[]> {
     const supported: Map<string, TokenId> = new Map();
 
-    await this.forEach(async (_, route) => {
+    await this.forEach(async (name, route) => {
       try {
         const destTokenIds = await route.supportedDestTokens(
           sourceToken,

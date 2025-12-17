@@ -3,14 +3,14 @@ import type {
   TransactionId,
   Network,
   Signer,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   isSignAndSendSigner,
   isSignOnlySigner,
-} from '@wormhole-foundation/sdk-connect';
-import type { EvmPlatform } from '@wormhole-foundation/sdk-evm';
-import type { SolanaPlatform } from '@wormhole-foundation/sdk-solana';
-import type { SuiPlatform } from '@wormhole-foundation/sdk-sui';
+} from '@xertraplatform/wormhole-sdk-connect';
+import type { EvmPlatform } from '@xertraplatform/wormhole-sdk-evm';
+import type { SolanaPlatform } from '@xertraplatform/wormhole-sdk-solana';
+import type { SuiPlatform } from '@xertraplatform/wormhole-sdk-sui';
 
 export async function executeTransaction<N extends Network>(
   txReq: any,

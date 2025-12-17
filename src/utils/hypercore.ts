@@ -1,5 +1,9 @@
-import type { Chain, Network, Signer } from '@wormhole-foundation/sdk-connect';
-import { chainToPlatform, routes } from '@wormhole-foundation/sdk-connect';
+import type {
+  Chain,
+  Network,
+  Signer,
+} from '@xertraplatform/wormhole-sdk-connect';
+import { chainToPlatform, routes } from '@xertraplatform/wormhole-sdk-connect';
 import type {
   PermitDomain,
   PermitValue,

@@ -13,17 +13,17 @@ import type {
   ChainContext,
   ExecutorTokenBridge,
   TokenId,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import {
   Wormhole,
   amount,
   circle,
   nativeTokenId,
   TBTCBridge,
-} from '@wormhole-foundation/sdk';
-import type { NttRoute } from '@wormhole-foundation/sdk-route-ntt';
-import type { MultiTokenNttRoute } from '@wormhole-foundation/sdk-route-ntt';
-import type { CCTPv2ExecutorRoute } from '@wormhole-labs/cctp-executor-route';
+} from '@xertraplatform/wormhole-sdk';
+import type { NttRoute } from '@xertraplatform/wormhole-sdk-route-ntt';
+import type { MultiTokenNttRoute } from '@xertraplatform/wormhole-sdk-route-ntt';
+import type { CCTPv2ExecutorRoute } from '@xertraplatform/cctp-executor-route';
 import { Connection } from '@solana/web3.js';
 import { PublicKey } from '@solana/web3.js';
 import * as splToken from '@solana/spl-token';

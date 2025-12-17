@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import {
   getTokenPreferenceScore,
   calculateTokenUSDBalance,
@@ -13,8 +13,8 @@ import type { Balances } from './wallet/types';
 import { createMockToken } from './testHelpers';
 
 // Mock dependencies
-vi.mock('@wormhole-foundation/sdk', async () => {
-  const actual = await vi.importActual('@wormhole-foundation/sdk');
+vi.mock('@xertraplatform/wormhole-sdk', async () => {
+  const actual = await vi.importActual('@xertraplatform/wormhole-sdk');
   return {
     ...actual,
     circle: {

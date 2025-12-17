@@ -3,7 +3,7 @@ import type {
   TokenId,
   TokenAddress,
   TokenBridge,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import {
   canonicalAddress,
   isTokenId,
@@ -13,12 +13,12 @@ import {
   chainToPlatform,
   UniversalAddress,
   isUnattestedTokenId,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import type { TokenIcon, TokenConfig, WrappedTokenAddresses } from './types';
 import config, { getWormholeContextV2 } from './index';
-import { isValidSuiType } from '@wormhole-foundation/sdk-sui';
+import { isValidSuiType } from '@xertraplatform/wormhole-sdk-sui';
 import { fetchTokenMetadata } from 'utils/coingecko';
-import { MultiTokenNttExecutorRoute } from '@wormhole-foundation/sdk-route-ntt';
+import { MultiTokenNttExecutorRoute } from '@xertraplatform/wormhole-sdk-route-ntt';
 
 const TOKEN_CACHE_VERSION = 1;
 

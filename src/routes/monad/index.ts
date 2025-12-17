@@ -3,16 +3,16 @@ import type {
   Network,
   routes,
   TokenId,
-} from '@wormhole-foundation/sdk';
-import type { MultiTokenNttRoute } from '@wormhole-foundation/sdk-route-ntt';
+} from '@xertraplatform/wormhole-sdk';
+import type { MultiTokenNttRoute } from '@xertraplatform/wormhole-sdk-route-ntt';
 import {
   MultiTokenNttExecutorRoute,
   MultiTokenNttManualRoute,
-} from '@wormhole-foundation/sdk-route-ntt';
+} from '@xertraplatform/wormhole-sdk-route-ntt';
 import { isTokenSupported } from './utils';
 
-import '@wormhole-foundation/sdk-definitions-ntt';
-import '@wormhole-foundation/sdk-evm-ntt';
+import '@xertraplatform/wormhole-sdk-definitions-ntt';
+import '@xertraplatform/wormhole-sdk-evm-ntt';
 
 export function monadBridgeExecutorRoute(
   config: MultiTokenNttExecutorRoute.Config,

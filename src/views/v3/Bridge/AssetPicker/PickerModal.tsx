@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import { bindPopover } from 'material-ui-popup-state/hooks';
 import type { PopupState } from 'material-ui-popup-state/hooks';
-import { type Chain } from '@wormhole-foundation/sdk';
+import { type Chain } from '@xertraplatform/wormhole-sdk';
 
 import type { ChainConfig } from 'config/types';
 import type { WalletData } from 'store/wallet';

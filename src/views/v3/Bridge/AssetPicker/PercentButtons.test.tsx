@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { configureStore } from '@reduxjs/toolkit';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 import PercentButtons from './PercentButtons';
 import { dark } from 'theme';
@@ -35,8 +35,8 @@ vi.mock('utils', () => ({
   getTokenDisplaySymbolByTokenAddress: vi.fn((token) => token.symbol),
 }));
 
-vi.mock('@wormhole-foundation/sdk', async () => {
-  const actual = await vi.importActual('@wormhole-foundation/sdk');
+vi.mock('@xertraplatform/wormhole-sdk', async () => {
+  const actual = await vi.importActual('@xertraplatform/wormhole-sdk');
   return {
     ...actual,
     isSameToken: vi.fn(),
@@ -175,7 +175,7 @@ describe('PercentButtons', () => {
       const { useGetTokens } = vi.mocked(await import('hooks/useGetTokens'));
       const { getGasToken } = vi.mocked(await import('utils'));
       const { isSameToken } = vi.mocked(
-        await import('@wormhole-foundation/sdk'),
+        await import('@xertraplatform/wormhole-sdk'),
       );
 
       const gasReserve = sdkAmount.fromBaseUnits(10000000000000000n, 18); // 0.01 ETH
@@ -207,7 +207,7 @@ describe('PercentButtons', () => {
       const { useGetTokens } = vi.mocked(await import('hooks/useGetTokens'));
       const { getGasToken } = vi.mocked(await import('utils'));
       const { isSameToken } = vi.mocked(
-        await import('@wormhole-foundation/sdk'),
+        await import('@xertraplatform/wormhole-sdk'),
       );
 
       const usdcToken = createMockToken({
@@ -253,7 +253,7 @@ describe('PercentButtons', () => {
       const { useGetTokens } = vi.mocked(await import('hooks/useGetTokens'));
       const { getGasToken } = vi.mocked(await import('utils'));
       const { isSameToken } = vi.mocked(
-        await import('@wormhole-foundation/sdk'),
+        await import('@xertraplatform/wormhole-sdk'),
       );
 
       const gasReserve = sdkAmount.fromBaseUnits(20000000000000000n, 18); // 0.02 ETH
@@ -303,7 +303,7 @@ describe('PercentButtons', () => {
       const { useGetTokens } = vi.mocked(await import('hooks/useGetTokens'));
       const { getGasToken } = vi.mocked(await import('utils'));
       const { isSameToken } = vi.mocked(
-        await import('@wormhole-foundation/sdk'),
+        await import('@xertraplatform/wormhole-sdk'),
       );
 
       const gasReserve = sdkAmount.fromBaseUnits(20000000000000000n, 18); // 0.02 ETH
@@ -344,7 +344,7 @@ describe('PercentButtons', () => {
       const { useGetTokens } = vi.mocked(await import('hooks/useGetTokens'));
       const { getGasToken } = vi.mocked(await import('utils'));
       const { isSameToken } = vi.mocked(
-        await import('@wormhole-foundation/sdk'),
+        await import('@xertraplatform/wormhole-sdk'),
       );
 
       const usdcToken = createMockToken({

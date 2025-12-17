@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { signAndSendTransaction } from './evm';
-import type { EvmUnsignedTransaction } from '@wormhole-foundation/sdk-evm';
-import type { Network } from '@wormhole-foundation/sdk';
+import type { EvmUnsignedTransaction } from '@xertraplatform/wormhole-sdk-evm';
+import type { Network } from '@xertraplatform/wormhole-sdk';
 
 describe('signAndSendTransaction', () => {
   const mockWallet = {

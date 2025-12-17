@@ -3,11 +3,11 @@ import type { SuiWallet } from '@wormhole-labs/wallet-aggregator-sui';
 import { getWallets } from '@wormhole-labs/wallet-aggregator-sui';
 import type { Wallet } from '@wormhole-labs/wallet-aggregator-core';
 
-import type { Network } from '@wormhole-foundation/sdk';
+import type { Network } from '@xertraplatform/wormhole-sdk';
 import type {
   SuiUnsignedTransaction,
   SuiChains,
-} from '@wormhole-foundation/sdk-sui';
+} from '@xertraplatform/wormhole-sdk-sui';
 
 export async function fetchOptions() {
   const suiWallets = await getWallets({ timeout: 0 });

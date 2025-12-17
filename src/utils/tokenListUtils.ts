@@ -2,7 +2,7 @@ import {
   circle,
   isNative,
   amount as sdkAmount,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import type { ChainConfig } from 'config/types';
 import type { Token } from 'config/tokens';
 import {

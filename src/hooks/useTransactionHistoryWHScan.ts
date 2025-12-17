@@ -5,13 +5,13 @@ import {
   chainToChainId,
   toNative,
   Wormhole,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import { WORMSCAN } from 'config/constants';
 import { getGasToken } from 'utils';
 
-import type { Chain, ChainId } from '@wormhole-foundation/sdk';
+import type { Chain, ChainId } from '@xertraplatform/wormhole-sdk';
 import type { Transaction } from 'config/types';
 import { toFixedDecimals } from 'utils/balance';
 import { useTokens } from 'contexts/TokensContext';

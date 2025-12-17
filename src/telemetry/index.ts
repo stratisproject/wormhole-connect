@@ -1,5 +1,5 @@
 import type { TokenDetails, TransferDetails } from './types';
-import type { Chain, amount as sdkAmount } from '@wormhole-foundation/sdk';
+import type { Chain, amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import type { Token } from 'config/tokens';
 
 export * from './types';

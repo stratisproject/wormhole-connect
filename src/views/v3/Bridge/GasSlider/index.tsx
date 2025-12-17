@@ -9,7 +9,7 @@ import Switch from '@mui/material/Switch';
 import Tooltip from '@mui/material/Tooltip';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { amount } from '@wormhole-foundation/sdk';
+import { amount } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import { calculateUSDPrice, chainDisplayName } from 'utils';

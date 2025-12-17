@@ -1,4 +1,4 @@
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 interface Separators {
   group: string;

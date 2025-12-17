@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { amount, Chain, routes } from '@wormhole-foundation/sdk';
+import type { amount, Chain, routes } from '@xertraplatform/wormhole-sdk';
 import useFetchQuotes from 'hooks/useFetchQuotes';
 import config from 'config';
 import useFetchSupportedRoutes from './useFetchSupportedRoutes';

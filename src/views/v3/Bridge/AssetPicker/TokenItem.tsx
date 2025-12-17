@@ -5,13 +5,13 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import { isNative } from '@wormhole-foundation/sdk';
+import { isNative } from '@xertraplatform/wormhole-sdk';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import TokenIcon from 'icons/TokenIcons';
 
 import type { Token } from 'config/tokens';
 
-import type { Chain, amount as sdkAmount } from '@wormhole-foundation/sdk';
+import type { Chain, amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import {
   chainDisplayName,
   getTokenExplorerUrl,

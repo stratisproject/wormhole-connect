@@ -2,13 +2,13 @@ import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import type { Balances } from 'utils/wallet/types';
 import config, { getWormholeContextV2 } from 'config';
 import type { Token } from 'config/tokens';
-import { chainToPlatform } from '@wormhole-foundation/sdk-base';
-import type { Chain } from '@wormhole-foundation/sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk-base';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import {
   Wormhole,
   amount,
   supportsIndexerUtils,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import type { WalletData } from 'store/wallet';
 import { useTokens } from 'contexts/TokensContext';
 import { processBatches } from 'utils/batch';

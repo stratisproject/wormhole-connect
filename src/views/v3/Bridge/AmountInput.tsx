@@ -13,7 +13,7 @@ import { useTheme } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
-import type { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import type { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import Box from '@mui/material/Box';
 
 import type { Token } from 'config/tokens';

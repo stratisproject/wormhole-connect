@@ -2,7 +2,7 @@ import {
   amount as sdkAmount,
   type routes,
   type Network,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import config from 'config';
 import type { Token } from 'config/tokens';
 import SDKv2Route from 'routes/sdkv2/route';

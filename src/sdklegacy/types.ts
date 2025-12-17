@@ -1,4 +1,4 @@
-import type { Network, Chain } from '@wormhole-foundation/sdk';
+import type { Network, Chain } from '@xertraplatform/wormhole-sdk';
 
 export const NATIVE = 'native';
 

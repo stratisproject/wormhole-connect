@@ -15,7 +15,7 @@ import {
   isFailed,
   routes,
   isNative,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import { getTokenDetails, getTransferDetails } from 'telemetry';
 
 import AlertBannerV3 from 'components/v3/AlertBanner';

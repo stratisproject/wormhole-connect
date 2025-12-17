@@ -48,7 +48,7 @@ vi.mock('contexts/TokensContext', () => ({
   })),
 }));
 
-vi.mock('@wormhole-foundation/sdk', () => ({
+vi.mock('@xertraplatform/wormhole-sdk', () => ({
   amount: {
     fromBaseUnits: vi.fn((amount, decimals) => ({
       amount: amount.toString(),

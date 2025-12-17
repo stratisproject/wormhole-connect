@@ -146,6 +146,7 @@ export const TESTNET_WRAPPED_TOKENS: WrappedTokenAddresses = {
       ArbitrumSepolia: '0x97Ee87C7Db6049669a518730a2Ee60d1Fc58844E',
       Avalanche: '0x12bFE94230daaE3d48067577F45b7b031dD357f3',
       Fantom: '0x7F96D67186561Aa17cEb699494E94bEE3F3499D4',
+      Auroria: '0x811fb0eB3b8De42830a4dc937e286d0a51fEAE96',
     },
     '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238': {
       Aptos:
@@ -163,6 +164,11 @@ export const TESTNET_WRAPPED_TOKENS: WrappedTokenAddresses = {
   OptimismSepolia: {
     '0x4200000000000000000000000000000000000006': {
       ArbitrumSepolia: '0xa2610700cCA8361DECD27dB2564848C530f20813',
+    },
+  },
+  Auroria: {
+    '0x57402359Eb6f3aB02c19EA7B98F366f324b66Aae': {
+      Sepolia: '0xe75d7bea9ad9f4115fbf4f8418702816e8173d05',
     },
   },
 };

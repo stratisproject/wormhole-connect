@@ -1,15 +1,15 @@
 import type { Route } from '@lifi/sdk';
 import { getStepTransaction } from '@lifi/sdk';
-import type { TokenId, Network } from '@wormhole-foundation/sdk-connect';
+import type { TokenId, Network } from '@xertraplatform/wormhole-sdk-connect';
 import {
   isNative,
   amount as sdkAmount,
-} from '@wormhole-foundation/sdk-connect';
-import type { EvmChains } from '@wormhole-foundation/sdk-evm';
+} from '@xertraplatform/wormhole-sdk-connect';
+import type { EvmChains } from '@xertraplatform/wormhole-sdk-evm';
 import {
   EvmPlatform,
   EvmUnsignedTransaction,
-} from '@wormhole-foundation/sdk-evm';
+} from '@xertraplatform/wormhole-sdk-evm';
 import { ethers } from 'ethers';
 import type { PlatformContext } from '../types';
 import { executeTransaction } from './common';

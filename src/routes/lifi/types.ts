@@ -5,7 +5,7 @@ import type {
   routes,
   Signer,
   TransactionId,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 
 export interface PlatformContext<N extends Network> {
   request: routes.RouteTransferRequest<N>;

@@ -225,4 +225,12 @@ export const TESTNET_CHAINS: ChainsConfig = {
     explorerName: 'Moca Chain Explorer',
     symbol: 'MOCA',
   },
+  Auroria: {
+    displayName: 'Auroria',
+    explorerUrl: 'https://auroria.explorer.xertra.com/',
+    explorerName: 'Auroria Explorer',
+    icon: 'Xertra',
+    symbol: 'STRAX',
+    sdkName: 'Auroria',
+  },
 };

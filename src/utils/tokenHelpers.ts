@@ -1,4 +1,4 @@
-import type { Chain, TokenId } from '@wormhole-foundation/sdk';
+import type { Chain, TokenId } from '@xertraplatform/wormhole-sdk';
 import config from 'config';
 import memoize from 'fast-memoize';
 

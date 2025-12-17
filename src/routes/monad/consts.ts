@@ -1,6 +1,6 @@
-import type { Network, TokenId } from '@wormhole-foundation/sdk-connect';
-import { Wormhole } from '@wormhole-foundation/sdk-connect';
-import type { MultiTokenNtt } from '@wormhole-foundation/sdk-definitions-ntt';
+import type { Network, TokenId } from '@xertraplatform/wormhole-sdk-connect';
+import { Wormhole } from '@xertraplatform/wormhole-sdk-connect';
+import type { MultiTokenNtt } from '@xertraplatform/wormhole-sdk-definitions-ntt';
 
 export const TOKEN_DENY_LIST: Partial<Record<Network, TokenId[]>> = {
   Mainnet: [],

@@ -1,5 +1,5 @@
 import { ChainId } from '@lifi/sdk';
-import type { Chain } from '@wormhole-foundation/sdk-connect';
+import type { Chain } from '@xertraplatform/wormhole-sdk-connect';
 
 // Constants
 export const DEFAULT_SLIPPAGE_PERCENT = 0.005; // 0.5%

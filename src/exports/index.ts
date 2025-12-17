@@ -9,9 +9,9 @@ export * as config from 'config/types';
 
 // Routes
 import { DEFAULT_ROUTES } from 'routes/operator';
-import { routes } from '@wormhole-foundation/sdk';
+import { routes } from '@xertraplatform/wormhole-sdk';
 
-import type { Chain, Network } from '@wormhole-foundation/sdk';
+import type { Chain, Network } from '@xertraplatform/wormhole-sdk';
 
 import { Token } from 'config/tokens';
 import { TransferWallet } from 'utils/wallet';

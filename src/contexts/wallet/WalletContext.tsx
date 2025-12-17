@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type {
   TransferWallet,
   Wallet,

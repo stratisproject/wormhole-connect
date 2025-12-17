@@ -3,11 +3,11 @@ import type { Network as AptosNetwork } from '@aptos-labs/wallet-adapter-core';
 import { AptosWallet } from '@wormhole-labs/wallet-aggregator-aptos';
 import type { Aptos } from '@aptos-labs/ts-sdk';
 
-import type { Network } from '@wormhole-foundation/sdk';
+import type { Network } from '@xertraplatform/wormhole-sdk';
 import type {
   AptosUnsignedTransaction,
   AptosChains,
-} from '@wormhole-foundation/sdk-aptos';
+} from '@xertraplatform/wormhole-sdk-aptos';
 
 import config, { getWormholeContextV2 } from 'config';
 

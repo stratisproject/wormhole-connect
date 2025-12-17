@@ -16,7 +16,7 @@ import type {
   AttestationReceipt,
   CompletedTransferReceipt,
   RefundedTransferReceipt,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   TransferState,
   canonicalAddress,
@@ -28,7 +28,7 @@ import {
   isSourceInitiated,
   routes,
   amount as sdkAmount,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   getTransactionStatus,
   supportedChains,

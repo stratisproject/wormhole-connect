@@ -19,7 +19,7 @@ import {
   ERR_TIMEOUT,
   ERR_UNKNOWN,
 } from 'telemetry/types';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 describe('Error regex patterns', () => {
   const regexTestCases = [

@@ -12,22 +12,22 @@ import type {
   Chain,
   UnsignedTransaction,
   Platform,
-} from '@wormhole-foundation/sdk';
-import { chainToPlatform } from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
 
 import type {
   EvmUnsignedTransaction,
   EvmChains,
-} from '@wormhole-foundation/sdk-evm';
+} from '@xertraplatform/wormhole-sdk-evm';
 import type {
   SuiUnsignedTransaction,
   SuiChains,
-} from '@wormhole-foundation/sdk-sui';
+} from '@xertraplatform/wormhole-sdk-sui';
 import type {
   AptosUnsignedTransaction,
   AptosChains,
-} from '@wormhole-foundation/sdk-aptos';
-import type { SolanaUnsignedTransaction } from '@wormhole-foundation/sdk-solana';
+} from '@xertraplatform/wormhole-sdk-aptos';
+import type { SolanaUnsignedTransaction } from '@xertraplatform/wormhole-sdk-solana';
 
 export enum TransferWallet {
   SENDING = 'sending',

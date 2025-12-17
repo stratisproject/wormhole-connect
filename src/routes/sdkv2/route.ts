@@ -5,17 +5,17 @@ import type {
   TokenId as TokenId,
   TransactionId,
   Signer,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import {
   Wormhole,
   routes,
   chainToPlatform,
   isSameToken,
   TransferState,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import type { Token } from 'config/tokens';
 
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import { AsyncCache } from 'utils/AsyncCache';
 import config, { getWormholeContextV2 } from 'config';
 import { sleep } from 'utils';

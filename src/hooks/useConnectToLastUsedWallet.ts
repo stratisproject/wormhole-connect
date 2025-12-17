@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import { TransferWallet } from 'utils/wallet';
 import useWalletProvider from 'hooks/useWalletProvider';
 

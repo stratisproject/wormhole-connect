@@ -1,10 +1,10 @@
 import type {
   TokenId,
   ChainContext,
-} from '@wormhole-foundation/sdk-definitions';
-import { isSameToken } from '@wormhole-foundation/sdk-definitions';
+} from '@xertraplatform/wormhole-sdk-definitions';
+import { isSameToken } from '@xertraplatform/wormhole-sdk-definitions';
 import { CONTRACTS, TOKEN_DENY_LIST, TOKEN_ALLOW_LIST } from './consts';
-import type { Network } from '@wormhole-foundation/sdk-connect';
+import type { Network } from '@xertraplatform/wormhole-sdk-connect';
 
 export function isTokenSupported<N extends Network>(
   sourceToken: TokenId,

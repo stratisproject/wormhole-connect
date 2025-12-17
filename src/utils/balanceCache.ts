@@ -1,4 +1,4 @@
-import type { amount, Chain } from '@wormhole-foundation/sdk';
+import type { amount, Chain } from '@xertraplatform/wormhole-sdk';
 import type { Token } from 'config/tokens';
 import type { WalletData } from 'store/wallet';
 

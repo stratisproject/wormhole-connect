@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { chainToPlatform } from '@wormhole-foundation/sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
 import { useTheme } from '@mui/material';
 
 import CircularProgress from '@mui/material/CircularProgress';

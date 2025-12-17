@@ -3,7 +3,7 @@ import config from 'config';
 import { getTokenDetails } from 'telemetry';
 import { maybeLogSdkError } from 'utils/errors';
 import { ReadOnlyWallet } from 'utils/wallet/ReadOnlyWallet';
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { Token } from 'config/tokens';
 import type { WalletData } from 'store/wallet';
 

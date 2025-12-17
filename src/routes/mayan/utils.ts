@@ -12,13 +12,13 @@ import type {
   TransactionId,
   routes,
   Network,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   TransferState,
   deserialize,
   encoding,
   toChain,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import axios from 'axios';
 import type { TransactionStatus } from './types';
 import { MayanClientStatus, MayanTransactionGoal } from './types';

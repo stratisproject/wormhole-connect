@@ -173,7 +173,7 @@ export const TESTNET_TOKENS: TokenConfig[] = [
     decimals: 18,
     tokenId: {
       chain: 'Sepolia',
-      address: '0xeef12A83EE5b7161D3873317c8E0E7B76e0B5D9c',
+      address: '0x7b79995e5f793a07bc00c21412e50ecae098e7f9',
     },
   },
   {
@@ -505,5 +505,20 @@ export const TESTNET_TOKENS: TokenConfig[] = [
     tokenId: { chain: 'Moca', address: 'native' },
     decimals: 18,
     icon: TokenIcon.MOCA,
+  },
+  {
+    symbol: 'STRAX',
+    icon: TokenIcon.STRAX,
+    decimals: 18,
+    tokenId: { chain: 'Auroria', address: 'native' },
+  },
+  {
+    symbol: 'WSTRAX',
+    icon: TokenIcon.STRAX,
+    decimals: 18,
+    tokenId: {
+      chain: 'Auroria',
+      address: '0x57402359Eb6f3aB02c19EA7B98F366f324b66Aae',
+    },
   },
 ];

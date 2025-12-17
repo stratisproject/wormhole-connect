@@ -1,5 +1,8 @@
-import type { Chain, Network } from '@wormhole-foundation/sdk-base';
-import { chainToPlatform, nativeChainIds } from '@wormhole-foundation/sdk-base';
+import type { Chain, Network } from '@xertraplatform/wormhole-sdk-base';
+import {
+  chainToPlatform,
+  nativeChainIds,
+} from '@xertraplatform/wormhole-sdk-base';
 import type { TransferWallet } from '.';
 import { getWalletOptions, signAndSendTransaction } from '.';
 import type {
@@ -8,7 +11,7 @@ import type {
 } from './types';
 import type { Wallet } from '@wormhole-labs/wallet-aggregator-core';
 import config from 'config';
-import type { UnsignedTransaction } from '@wormhole-foundation/sdk-definitions';
+import type { UnsignedTransaction } from '@xertraplatform/wormhole-sdk-definitions';
 import { ReadOnlyWallet } from './ReadOnlyWallet';
 
 /**

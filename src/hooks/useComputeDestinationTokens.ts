@@ -6,7 +6,7 @@ import { setDestToken } from 'store/transferInput';
 
 import type { Token } from 'config/tokens';
 
-import type { Chain, TokenId } from '@wormhole-foundation/sdk';
+import type { Chain, TokenId } from '@xertraplatform/wormhole-sdk';
 import { useTokens } from 'contexts/TokensContext';
 
 type Props = {

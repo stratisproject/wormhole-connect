@@ -18,30 +18,28 @@ console.warn = function (x: any, ...rest: any) {
   }
 };
 
-import {
+import type {
   Chain,
   Network,
-  toNative,
   UniversalAddress,
-  Wormhole,
-  wormhole,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
+import { toNative, Wormhole, wormhole } from '@xertraplatform/wormhole-sdk';
 import { MAINNET_CHAINS } from '../src/config/mainnet/chains';
 import { MAINNET_TOKENS } from '../src/config/mainnet/tokens';
 import { MAINNET_WRAPPED_TOKENS } from '../src/config/mainnet/wrappedTokens';
 import { TESTNET_CHAINS } from '../src/config/testnet/chains';
 import { TESTNET_TOKENS } from '../src/config/testnet/tokens';
 import { TESTNET_WRAPPED_TOKENS } from '../src/config/testnet/wrappedTokens';
-import {
+import type {
   ChainsConfig,
   TokenConfig,
   WrappedTokenAddresses,
 } from '../src/config/types';
 
-import evm from '@wormhole-foundation/sdk/evm';
-import solana from '@wormhole-foundation/sdk/solana';
-import aptos from '@wormhole-foundation/sdk/aptos';
-import sui from '@wormhole-foundation/sdk/sui';
+import evm from '@xertraplatform/wormhole-sdk/evm';
+import solana from '@xertraplatform/wormhole-sdk/solana';
+import aptos from '@xertraplatform/wormhole-sdk/aptos';
+import sui from '@xertraplatform/wormhole-sdk/sui';
 
 const WORMCHAIN_ERROR_MESSAGES = [
   '3104 RPC not configured',
@@ -57,7 +55,7 @@ const checkEnvConfig = async (
   wrappedTokens: WrappedTokenAddresses,
   chainsConfig: ChainsConfig,
 ) => {
-  let recommendedUpdates: WrappedTokenAddresses = {};
+  const recommendedUpdates: WrappedTokenAddresses = {};
   const wh = await wormhole(env, [evm, solana, aptos, sui]);
 
   for (const { tokenId } of tokensConfig) {

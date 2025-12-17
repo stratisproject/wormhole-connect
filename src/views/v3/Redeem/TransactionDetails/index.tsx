@@ -23,7 +23,7 @@ import {
   getTokenDisplaySymbolByTokenAddress,
 } from 'utils';
 import { getExplorerInfos } from 'utils/sdkv2';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 import type { RootState } from 'store';
 import { useTokens } from 'contexts/TokensContext';

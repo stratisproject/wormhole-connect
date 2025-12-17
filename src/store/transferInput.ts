@@ -12,8 +12,8 @@ import {
   getEmptyDataWrapper,
   receiveDataWrapper,
 } from './helpers';
-import type { Chain } from '@wormhole-foundation/sdk';
-import { amount } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import { amount } from '@xertraplatform/wormhole-sdk';
 
 export type ValidationErr = string;
 

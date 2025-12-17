@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import type { Chain, Platform } from '@wormhole-foundation/sdk';
-import { chainToPlatform } from '@wormhole-foundation/sdk';
+import type { Chain, Platform } from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import type { WalletData } from 'utils/wallet';

@@ -1,11 +1,11 @@
 import type { Route } from '@lifi/sdk';
 import { getStepTransaction } from '@lifi/sdk';
-import type { Network } from '@wormhole-foundation/sdk-connect';
-import type { SolanaTransaction } from '@wormhole-foundation/sdk-solana';
+import type { Network } from '@xertraplatform/wormhole-sdk-connect';
+import type { SolanaTransaction } from '@xertraplatform/wormhole-sdk-solana';
 import {
   SolanaPlatform,
   SolanaUnsignedTransaction,
-} from '@wormhole-foundation/sdk-solana';
+} from '@xertraplatform/wormhole-sdk-solana';
 import { VersionedTransaction, Keypair } from '@solana/web3.js';
 import type { PlatformContext } from '../types';
 import { executeTransaction } from './common';

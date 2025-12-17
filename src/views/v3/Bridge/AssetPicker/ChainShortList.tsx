@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import ChainIcon from 'icons/ChainIcons';
 import PlusIcon from 'icons/Plus';
 
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { ChainConfig } from 'config/types';
 import { OPACITY } from 'utils/style';
 

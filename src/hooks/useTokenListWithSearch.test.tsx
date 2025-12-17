@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { renderHook } from '@testing-library/react';
 import { useTokenListWithSearch } from './useTokenListWithSearch';
 import { Token } from 'config/tokens';
-import { amount } from '@wormhole-foundation/sdk-connect';
+import { amount } from '@xertraplatform/wormhole-sdk-connect';
 
 const ethereumUSDC = new Token({
   chain: 'Ethereum',

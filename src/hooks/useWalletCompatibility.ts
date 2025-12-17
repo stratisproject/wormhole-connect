@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { WalletData } from '../store/wallet';
 
 export type WalletCompatibilityResult = {

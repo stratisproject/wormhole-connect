@@ -5,7 +5,7 @@ import type {
   WormholeConnectEvent,
   TriggerEventHandler,
 } from 'telemetry/types';
-import type { Network } from '@wormhole-foundation/sdk';
+import type { Network } from '@xertraplatform/wormhole-sdk';
 
 export function wrapEventHandler(
   network: Network,

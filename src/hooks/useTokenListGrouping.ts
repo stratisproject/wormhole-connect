@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import type { Token } from 'config/tokens';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 import type { Balances } from 'utils/wallet';
 
 export function useTokenListGrouping({

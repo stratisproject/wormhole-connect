@@ -9,9 +9,9 @@ import type {
   AttestationReceipt,
   routes,
   IndexerConfig,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 
-import type { PriorityFeeOptions } from '@wormhole-foundation/sdk-solana';
+import type { PriorityFeeOptions } from '@xertraplatform/wormhole-sdk-solana';
 
 import type {
   TransferDetails,
@@ -65,6 +65,7 @@ export enum TokenIcon {
   'INK',
   'BTC',
   'SONIC',
+  'STRAX',
   'PLUME',
   'FOGO',
   'HYPE',

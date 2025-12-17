@@ -11,8 +11,8 @@ import type {
   Network,
   NativeAddress,
   Chain,
-} from '@wormhole-foundation/sdk';
-import { chainToPlatform } from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
 import config, { getWormholeContextV2 } from 'config';
 import type { Token } from 'config/tokens';
 import { Contract } from 'ethers';

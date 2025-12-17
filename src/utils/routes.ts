@@ -1,6 +1,6 @@
 import config from 'config';
 
-import type { routes } from '@wormhole-foundation/sdk';
+import type { routes } from '@xertraplatform/wormhole-sdk';
 
 export const getBestRoutes = (
   routes: string[],

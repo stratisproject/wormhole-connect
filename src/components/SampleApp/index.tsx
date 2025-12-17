@@ -30,7 +30,7 @@ import type { WormholeConnectConfig } from 'config/types';
  * easily test NTT in SampleApp.
  *
  */
-import { routes } from '@wormhole-foundation/sdk';
+import { routes } from '@xertraplatform/wormhole-sdk';
 import {
   MayanRoute,
   MayanRouteWH,
@@ -127,7 +127,7 @@ const loadInitialConfig = (): string => {
   } else if (configCached) {
     return configCached;
   } else {
-    return '';
+    return '{"network":"Testnet",chains:["Auroria","Sepolia"]}';
   }
 };
 

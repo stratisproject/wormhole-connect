@@ -1,9 +1,9 @@
 import type { ChainsConfig, WrappedTokenAddresses } from './types';
 import type { TokenCache } from './tokens';
-import type { Chain } from '@wormhole-foundation/sdk';
-import type { NttRoute } from '@wormhole-foundation/sdk-route-ntt';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import type { NttRoute } from '@xertraplatform/wormhole-sdk-route-ntt';
 import type { DefaultInputs } from './ui';
-import { isNative } from '@wormhole-foundation/sdk';
+import { isNative } from '@xertraplatform/wormhole-sdk';
 
 const error = (msg: string) => {
   console.error(`Wormhole Connect: ${msg}`);

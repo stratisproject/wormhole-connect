@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Box, useTheme } from '@mui/material';
 
-import { chainToIcon } from '@wormhole-foundation/sdk-icons';
+import { chainToIcon } from '@xertraplatform/wormhole-sdk-icons';
 
 import { CENTER } from 'utils/style';
 import { TokenIcon } from 'config/types';
@@ -41,6 +41,7 @@ import BERA from './Tokens/BERA';
 import INK from './Tokens/INK';
 import BTC from './Tokens/BTC';
 import SONIC from './Chains/SONIC'; // TODO: Create a token icon for S
+import STRAX from './Chains/STRAX';
 import PLUME from './Tokens/PLUME';
 import FOGO from './Tokens/FOGO';
 import HYPE from './Tokens/HYPE';
@@ -99,6 +100,7 @@ const iconMap: { [key in TokenIcon]: React.JSX.Element } = {
   [TokenIcon.INK]: INK(),
   [TokenIcon.BTC]: BTC(),
   [TokenIcon.SONIC]: SONIC(),
+  [TokenIcon.STRAX]: STRAX(),
   [TokenIcon.PLUME]: PLUME(),
   [TokenIcon.FOGO]: FOGO(),
   [TokenIcon.HYPE]: HYPE(),

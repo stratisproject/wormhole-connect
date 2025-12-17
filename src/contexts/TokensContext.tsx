@@ -1,10 +1,10 @@
-import type { TokenId } from '@wormhole-foundation/sdk';
+import type { TokenId } from '@xertraplatform/wormhole-sdk';
 import {
   chainToPlatform,
   circle,
   isNative,
   toNative,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import config, { clearWormholeContextV2 } from 'config';
 import type { Token } from 'config/tokens';
 import { tokenKey, TokenMapping } from 'config/tokens';

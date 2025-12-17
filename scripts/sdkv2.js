@@ -6,12 +6,12 @@ const WORK_ROOT = process.env['WORK_ROOT'] || os.homedir();
 
 const thirdPartyPkgs = {
   '@wormhole-labs/cctp-executor-route': 'cctp-w7-executor-route',
-  '@wormhole-foundation/sdk-definitions-ntt':
+  '@xertraplatform/wormhole-sdk-definitions-ntt':
     'native-token-transfers/sdk/definitions',
-  '@wormhole-foundation/sdk-route-ntt': 'native-token-transfers/sdk/route',
-  '@wormhole-foundation/sdk-solana-ntt': 'native-token-transfers/solana',
-  '@wormhole-foundation/sdk-evm-ntt': 'native-token-transfers/evm/ts',
-  '@wormhole-foundation/sdk-sui-ntt': 'native-token-transfers/sui/ts',
+  '@xertraplatform/wormhole-sdk-route-ntt': 'native-token-transfers/sdk/route',
+  '@xertraplatform/wormhole-sdk-solana-ntt': 'native-token-transfers/solana',
+  '@xertraplatform/wormhole-sdk-evm-ntt': 'native-token-transfers/evm/ts',
+  '@xertraplatform/wormhole-sdk-sui-ntt': 'native-token-transfers/sui/ts',
   ntt: 'native-token-transfers',
 };
 

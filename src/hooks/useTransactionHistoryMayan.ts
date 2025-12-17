@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import type { Chain, ChainId, TokenId } from '@wormhole-foundation/sdk';
-import { chainIdToChain, toNative } from '@wormhole-foundation/sdk';
+import type { Chain, ChainId, TokenId } from '@xertraplatform/wormhole-sdk';
+import { chainIdToChain, toNative } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 

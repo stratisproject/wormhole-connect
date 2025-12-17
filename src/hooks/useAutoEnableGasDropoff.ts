@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
-import type { Chain } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { Balances } from 'utils/wallet/types';
 import config from 'config';
 import { setToNativeToken } from 'store/relay';

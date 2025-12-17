@@ -1,17 +1,17 @@
-import type { routes } from '@wormhole-foundation/sdk';
+import type { routes } from '@xertraplatform/wormhole-sdk';
 
-import '@wormhole-foundation/sdk-definitions-ntt';
-import '@wormhole-foundation/sdk-evm-ntt';
-import '@wormhole-foundation/sdk-solana-ntt';
-import '@wormhole-foundation/sdk-sui-ntt';
+import '@xertraplatform/wormhole-sdk-definitions-ntt';
+import '@xertraplatform/wormhole-sdk-evm-ntt';
+import '@xertraplatform/wormhole-sdk-solana-ntt';
+import '@xertraplatform/wormhole-sdk-sui-ntt';
 
-import type { NttRoute } from '@wormhole-foundation/sdk-route-ntt';
+import type { NttRoute } from '@xertraplatform/wormhole-sdk-route-ntt';
 import {
   nttAutomaticRoute,
   type NttExecutorRoute,
   nttExecutorRoute,
   nttManualRoute,
-} from '@wormhole-foundation/sdk-route-ntt';
+} from '@xertraplatform/wormhole-sdk-route-ntt';
 
 // Convenience function for integrators when adding NTT routes to their config
 //

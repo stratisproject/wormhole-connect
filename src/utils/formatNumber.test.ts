@@ -6,7 +6,7 @@ import {
   formatMinAmount,
   formatMaxDigits,
 } from './formatNumber';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 // Locale configuration for separators
 const localeConfigs = [

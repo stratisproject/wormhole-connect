@@ -30,8 +30,11 @@ import FooterNavBar from 'components/FooterNavBar';
 import { RouteContext } from 'contexts/RouteContext';
 
 import { parseReceipt } from 'utils/sdkv2';
-import type { AttestedTransferReceipt, Chain } from '@wormhole-foundation/sdk';
-import { TransferState } from '@wormhole-foundation/sdk';
+import type {
+  AttestedTransferReceipt,
+  Chain,
+} from '@xertraplatform/wormhole-sdk';
+import { TransferState } from '@xertraplatform/wormhole-sdk';
 import ChainIconComponent from 'icons/ChainIcons';
 import type { RootState } from 'store';
 import { clearSearch } from 'store/search';

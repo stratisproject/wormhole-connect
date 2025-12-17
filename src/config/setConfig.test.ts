@@ -45,8 +45,8 @@ vi.mock('sdklegacy', () => ({
   },
 }));
 
-vi.mock('@wormhole-foundation/sdk', async () => {
-  const actual = await vi.importActual('@wormhole-foundation/sdk');
+vi.mock('@xertraplatform/wormhole-sdk', async () => {
+  const actual = await vi.importActual('@xertraplatform/wormhole-sdk');
   return {
     ...actual,
     wormhole: vi.fn(),
@@ -55,10 +55,10 @@ vi.mock('@wormhole-foundation/sdk', async () => {
   };
 });
 
-vi.mock('@wormhole-foundation/sdk/evm', () => ({}));
-vi.mock('@wormhole-foundation/sdk/solana', () => ({}));
-vi.mock('@wormhole-foundation/sdk/aptos', () => ({}));
-vi.mock('@wormhole-foundation/sdk/sui', () => ({}));
+vi.mock('@xertraplatform/wormhole-sdk/evm', () => ({}));
+vi.mock('@xertraplatform/wormhole-sdk/solana', () => ({}));
+vi.mock('@xertraplatform/wormhole-sdk/aptos', () => ({}));
+vi.mock('@xertraplatform/wormhole-sdk/sui', () => ({}));
 
 describe('setConfig updates (Portal scenario)', () => {
   beforeEach(() => {

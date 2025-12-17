@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
-import type { Chain } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { ChainId as LifiChainId } from '@lifi/sdk';
 
 import config from 'config';

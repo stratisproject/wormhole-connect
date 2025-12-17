@@ -17,14 +17,14 @@ import type {
   ChainTokens as SDKChainTokens,
   WormholeConfigOverrides as WormholeConfigOverridesV2,
   Chain,
-} from '@wormhole-foundation/sdk';
-import { wormhole as getWormholeV2 } from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
+import { wormhole as getWormholeV2 } from '@xertraplatform/wormhole-sdk';
 
-import '@wormhole-foundation/sdk/addresses';
-import evm from '@wormhole-foundation/sdk/evm';
-import solana from '@wormhole-foundation/sdk/solana';
-import aptos from '@wormhole-foundation/sdk/aptos';
-import sui from '@wormhole-foundation/sdk/sui';
+import '@xertraplatform/wormhole-sdk/addresses';
+import evm from '@xertraplatform/wormhole-sdk/evm';
+import solana from '@xertraplatform/wormhole-sdk/solana';
+import aptos from '@xertraplatform/wormhole-sdk/aptos';
+import sui from '@xertraplatform/wormhole-sdk/sui';
 import RouteOperator from 'routes/operator';
 import { CHAIN_ORDER } from './constants';
 import { createUiConfig } from './ui';
@@ -117,11 +117,7 @@ export function buildConfig(
         'https://wormhole-v2-mainnet-api.chainlayer.network',
         'https://wormhole-v2-mainnet-api.staking.fund',
       ],
-      Testnet: [
-        'https://guardian.testnet.xlabs.xyz',
-        'https://guardian-01.testnet.xlabs.xyz',
-        'https://guardian-02.testnet.xlabs.xyz',
-      ],
+      Testnet: ['https://api.test.wormhole.xertra.com'],
       Devnet: ['http://localhost:7071'],
     }[network],
     coingecko: customConfig.coingecko,

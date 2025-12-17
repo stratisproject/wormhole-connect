@@ -2,7 +2,7 @@ import type {
   Chain,
   Network,
   amount as sdkAmount,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import type { WormholeConnectConfig } from 'config/types';
 import type { Token } from 'config/tokens';
 import type { TransferWallet } from 'utils/wallet';

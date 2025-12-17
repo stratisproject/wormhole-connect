@@ -1,5 +1,5 @@
-import type { Chain } from '@wormhole-foundation/sdk';
-import { chainToPlatform } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
+import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
 
 export function isEvmChain(chain: Chain): boolean {
   return chainToPlatform.has(chain) && chainToPlatform.get(chain) === 'Evm';

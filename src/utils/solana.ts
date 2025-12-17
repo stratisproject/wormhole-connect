@@ -13,18 +13,18 @@ import {
   LAMPORTS_PER_SOL,
 } from '@solana/web3.js';
 
-import type { SolanaUnsignedTransaction } from '@wormhole-foundation/sdk-solana';
+import type { SolanaUnsignedTransaction } from '@xertraplatform/wormhole-sdk-solana';
 import {
   determinePriorityFee,
   determinePriorityFeeTritonOne,
   isVersionedTransaction,
-} from '@wormhole-foundation/sdk-solana';
+} from '@xertraplatform/wormhole-sdk-solana';
 
 import {
   chainToPlatform,
   type Chain,
   type Network,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import { isEmptyObject, sleep } from 'utils';
 import config from 'config';
 

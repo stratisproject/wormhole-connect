@@ -1,4 +1,4 @@
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { Alignment } from 'components/Header';
 
 export type UiConfig = {

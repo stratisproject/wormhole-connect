@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { isCompleted, TransferState } from '@wormhole-foundation/sdk';
+import { isCompleted, TransferState } from '@xertraplatform/wormhole-sdk';
 import { clearCache as clearBalanceCache } from 'utils/balanceCache';
 
 import config, { getWormholeContextV2 } from 'config';
@@ -9,7 +9,7 @@ import type {
   AttestationReceipt,
   routes,
   TokenId,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import { useSelector } from 'react-redux';
 import type { RootState } from 'store';
 import { useTokens } from 'contexts/TokensContext';

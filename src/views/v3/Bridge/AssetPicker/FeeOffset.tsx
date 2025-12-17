@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Box, Tooltip, Typography, useTheme } from '@mui/material';
 import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
-import { amount as sdkAmount } from '@wormhole-foundation/sdk';
+import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 import config from 'config';
 import type { RootState } from 'store';

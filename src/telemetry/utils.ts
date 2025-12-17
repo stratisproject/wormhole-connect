@@ -1,5 +1,5 @@
 import config from 'config';
-import type { Chain } from '@wormhole-foundation/sdk-base';
+import type { Chain } from '@xertraplatform/wormhole-sdk-base';
 import type { Token } from 'config/tokens';
 import { UserActions } from './types';
 

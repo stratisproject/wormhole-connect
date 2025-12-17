@@ -1,4 +1,4 @@
-import type { Chain } from '@wormhole-foundation/sdk';
+import type { Chain } from '@xertraplatform/wormhole-sdk';
 import config from 'config';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

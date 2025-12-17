@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 
-import '@wormhole-foundation/sdk-evm';
+import '@xertraplatform/wormhole-sdk-evm';
 
-import { Wormhole } from '@wormhole-foundation/sdk-connect';
+import { Wormhole } from '@xertraplatform/wormhole-sdk-connect';
 import { isTokenSupported } from './utils';
 
 describe('Monad Bridge - isTokenSupported', () => {

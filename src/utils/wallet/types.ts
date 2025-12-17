@@ -3,7 +3,7 @@ import type {
   Chain,
   Network,
   UnsignedTransaction,
-} from '@wormhole-foundation/sdk';
+} from '@xertraplatform/wormhole-sdk';
 import type { TransferWallet } from '.';
 
 export type Balance = {

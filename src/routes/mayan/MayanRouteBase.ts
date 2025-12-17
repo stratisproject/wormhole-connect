@@ -30,7 +30,7 @@ import {
   generateFetchQuoteUrl as generateFetchQuoteUrlTestnet,
   getSwapFromEvmTxPayload as getSwapFromEvmTxPayloadTestnet,
 } from '@testnet-mayan/swap-sdk';
-import { circle } from '@wormhole-foundation/sdk-base';
+import { circle } from '@xertraplatform/wormhole-sdk-base';
 import type {
   Chain,
   ChainAddress,
@@ -40,7 +40,7 @@ import type {
   SourceInitiatedTransferReceipt,
   TokenId,
   TransactionId,
-} from '@wormhole-foundation/sdk-connect';
+} from '@xertraplatform/wormhole-sdk-connect';
 import {
   TransferState,
   Wormhole,
@@ -57,20 +57,20 @@ import {
   isSourceInitiated,
   nativeChainIds,
   routes,
-} from '@wormhole-foundation/sdk-connect';
-import type { EvmChains } from '@wormhole-foundation/sdk-evm';
+} from '@xertraplatform/wormhole-sdk-connect';
+import type { EvmChains } from '@xertraplatform/wormhole-sdk-evm';
 import {
   EvmPlatform,
   EvmUnsignedTransaction,
-} from '@wormhole-foundation/sdk-evm';
+} from '@xertraplatform/wormhole-sdk-evm';
 import {
   SolanaPlatform,
   SolanaUnsignedTransaction,
-} from '@wormhole-foundation/sdk-solana';
+} from '@xertraplatform/wormhole-sdk-solana';
 import {
   SuiPlatform,
   SuiUnsignedTransaction,
-} from '@wormhole-foundation/sdk-sui';
+} from '@xertraplatform/wormhole-sdk-sui';
 import axios from 'axios';
 import { createTransactionRequest, getEvmContractAddress } from './evm/utils';
 import { getAllTokenIdsForChain } from '../../utils/tokenHelpers';
