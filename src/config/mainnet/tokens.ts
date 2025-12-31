@@ -129,15 +129,15 @@ export const MAINNET_TOKENS: TokenConfig[] = [
       address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     },
   },
-  // {
-  //   symbol: 'USDC',
-  //   decimals: 18,
-  //   icon: TokenIcon.USDC,
-  //   tokenId: {
-  //     chain: 'Bsc',
-  //     address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-  //   },
-  // },
+  {
+    symbol: 'USDC',
+    decimals: 18,
+    icon: TokenIcon.USDC,
+    tokenId: {
+      chain: 'Bsc',
+      address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+    },
+  },
   // {
   //   symbol: 'AVAX',
   //   decimals: 18,

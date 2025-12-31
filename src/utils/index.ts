@@ -362,7 +362,8 @@ export const isFrankensteinToken = (token: Token, chain: Chain) => {
   const { nativeChain, symbol } = token;
 
   if (symbol === 'USDC') {
-    return true;
+    return false;
+    // return true;
   }
 
   if (token.symbol === 'tBTC') {
