@@ -107,16 +107,12 @@ export function buildConfig(
     mayanApi: 'https://explorer-api.mayan.finance',
     lifiExplorerUrl: 'https://li.quest',
     wormholeApi: {
-      Mainnet: 'https://api.wormholescan.io/',
-      Testnet: 'https://api.testnet.wormholescan.io/',
+      Mainnet: 'https://api.wormhole.xertra.com',
+      Testnet: 'https://api.test.wormhole.xertra.com/',
       Devnet: '',
     }[network],
     wormholeRpcHosts: {
-      Mainnet: [
-        'https://wormhole-v2-mainnet-api.mcf.rocks',
-        'https://wormhole-v2-mainnet-api.chainlayer.network',
-        'https://wormhole-v2-mainnet-api.staking.fund',
-      ],
+      Mainnet: ['https://api.wormhole.xertra.com'],
       Testnet: ['https://api.test.wormhole.xertra.com'],
       Devnet: ['http://localhost:7071'],
     }[network],

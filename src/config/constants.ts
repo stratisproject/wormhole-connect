@@ -9,6 +9,7 @@ export const CONNECT_GIT_HASH =
   import.meta.env.REACT_APP_CONNECT_GIT_HASH || 'unknown';
 
 export const CHAIN_ORDER: Chain[] = [
+  'Xertra',
   'Ethereum',
   'Solana',
   'Monad',

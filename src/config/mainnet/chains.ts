@@ -276,4 +276,12 @@ export const MAINNET_CHAINS: ChainsConfig = {
     symbol: 'MON',
     gasReserve: '0.01',
   },
+  Xertra: {
+    displayName: 'Xertra',
+    explorerUrl: 'https://explorer.xertra.com/',
+    explorerName: 'Xertra Explorer',
+    icon: 'Xertra',
+    symbol: 'STRAX',
+    sdkName: 'Xertra',
+  },
 };

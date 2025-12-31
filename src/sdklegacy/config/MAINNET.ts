@@ -9,7 +9,7 @@ const MAINNET_CONFIG: WormholeConfig = {
     Ethereum: 'https://ethereum-rpc.publicnode.com',
     Solana: 'https://solana-rpc.publicnode.com',
     Polygon: 'https://polygon-bor-rpc.publicnode.com',
-    Bsc: 'https://bscrpc.com',
+    Bsc: 'https://bsc-rpc.publicnode.com',
     Avalanche: 'https://avalanche-c-chain-rpc.publicnode.com',
     Fantom: 'https://rpcapi.fantom.network',
     Celo: 'https://celo-rpc.publicnode.com',
@@ -38,6 +38,7 @@ const MAINNET_CONFIG: WormholeConfig = {
     CreditCoin: 'https://mainnet3.creditcoin.network',
     Fogo: 'https://mainnet.fogo.io',
     Monad: 'https://rpc.monad.xyz',
+    Xertra: 'https://rpc.xertra.com',
   },
 };
 

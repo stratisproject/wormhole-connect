@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
 import config from 'config';
-import { RouteContext } from 'contexts/RouteContext';
+// import { RouteContext } from 'contexts/RouteContext';
 import AssetBadge from 'components/AssetBadge';
 import ExplorerLink from 'components/ExplorerLink';
 import {
@@ -22,7 +22,7 @@ import {
   trimAddress,
   getTokenDisplaySymbolByTokenAddress,
 } from 'utils';
-import { getExplorerInfos } from 'utils/sdkv2';
+// import { getExplorerInfos } from 'utils/sdkv2';
 import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
 
 import type { RootState } from 'store';
@@ -30,7 +30,7 @@ import { useTokens } from 'contexts/TokensContext';
 
 const TransactionDetails = () => {
   const theme = useTheme();
-  const routeContext = React.useContext(RouteContext);
+  // const routeContext = React.useContext(RouteContext);
 
   const styles = useMemo(
     () => ({
@@ -62,7 +62,7 @@ const TransactionDetails = () => {
     eta,
   } = useSelector((state: RootState) => state.redeem.txData)!;
 
-  const { route: routeName } = useSelector((state: RootState) => state.redeem);
+  // const { route: routeName } = useSelector((state: RootState) => state.redeem);
 
   const sourceToken = config.tokens.get(token);
   const destToken = config.tokens.get(receivedToken);
@@ -259,45 +259,45 @@ const TransactionDetails = () => {
     lastTokenPriceUpdate,
   ]);
 
-  const explorerLink = useMemo(() => {
-    // Fallback to routeName if RouteContext value is not available
-    const route = routeContext.route ?? routeName;
+  // const explorerLink = useMemo(() => {
+  //   // Fallback to routeName if RouteContext value is not available
+  //   const route = routeContext.route ?? routeName;
 
-    if (!route) {
-      return null;
-    }
+  //   if (!route) {
+  //     return null;
+  //   }
 
-    const explorerInfos = getExplorerInfos(route, sendTx, fromChain, toChain);
+  //   const explorerInfos = getExplorerInfos(route, sendTx, fromChain, toChain);
 
-    if (!explorerInfos || explorerInfos.length === 0) {
-      return null;
-    }
+  //   if (!explorerInfos || explorerInfos.length === 0) {
+  //     return null;
+  //   }
 
-    const validExplorers = explorerInfos.filter(({ url }) => URL.canParse(url));
+  //   const validExplorers = explorerInfos.filter(({ url }) => URL.canParse(url));
 
-    if (validExplorers.length === 0) {
-      return null;
-    }
+  //   if (validExplorers.length === 0) {
+  //     return null;
+  //   }
 
-    return (
-      <Stack direction="column" gap="8px" padding="12px 16px">
-        {validExplorers.map(({ name, url }, index) => (
-          <Stack key={index} direction="row" justifyContent="space-between">
-            <Typography color={theme.palette.text.secondary} fontSize={14}>
-              <ExplorerLink url={url} text={`View on ${name}`} />
-            </Typography>
-          </Stack>
-        ))}
-      </Stack>
-    );
-  }, [
-    fromChain,
-    routeContext.route,
-    routeName,
-    sendTx,
-    theme.palette.text.primary,
-    toChain,
-  ]);
+  //   return (
+  //     <Stack direction="column" gap="8px" padding="12px 16px">
+  //       {validExplorers.map(({ name, url }, index) => (
+  //         <Stack key={index} direction="row" justifyContent="space-between">
+  //           <Typography color={theme.palette.text.secondary} fontSize={14}>
+  //             <ExplorerLink url={url} text={`View on ${name}`} />
+  //           </Typography>
+  //         </Stack>
+  //       ))}
+  //     </Stack>
+  //   );
+  // }, [
+  //   fromChain,
+  //   routeContext.route,
+  //   routeName,
+  //   sendTx,
+  //   theme.palette.text.primary,
+  //   toChain,
+  // ]);
 
   const timeToDestination = useMemo(() => {
     let etaDisplay: string | ReactNode = <CircularProgress size={14} />;
@@ -351,7 +351,7 @@ const TransactionDetails = () => {
           </Stack>
         </CardContent>
         <Divider flexItem sx={{ margin: '0 16px', opacity: '50%' }} />
-        {explorerLink}
+        {/* {explorerLink} */}
       </Card>
     </Box>
   );
