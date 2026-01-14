@@ -173,7 +173,7 @@ export const TESTNET_TOKENS: TokenConfig[] = [
     decimals: 18,
     tokenId: {
       chain: 'Sepolia',
-      address: '0x7b79995e5f793a07bc00c21412e50ecae098e7f9',
+      address: '0xeef12A83EE5b7161D3873317c8E0E7B76e0B5D9c',
     },
   },
   {

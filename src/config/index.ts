@@ -108,12 +108,12 @@ export function buildConfig(
     lifiExplorerUrl: 'https://li.quest',
     wormholeApi: {
       Mainnet: 'https://api.wormhole.xertra.com',
-      Testnet: 'https://api.test.wormhole.xertra.com/',
+      Testnet: 'https://test.api.wormhole.xertra.com/',
       Devnet: '',
     }[network],
     wormholeRpcHosts: {
       Mainnet: ['https://api.wormhole.xertra.com'],
-      Testnet: ['https://api.test.wormhole.xertra.com'],
+      Testnet: ['https://test.api.wormhole.xertra.com'],
       Devnet: ['http://localhost:7071'],
     }[network],
     coingecko: customConfig.coingecko,
