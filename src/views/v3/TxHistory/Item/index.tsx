@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useDispatch } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -22,12 +23,14 @@ import {
 import type { Transaction } from 'config/types';
 import { useTokens } from 'contexts/TokensContext';
 import ExplorerLink from 'components/ExplorerLink';
+import { setSearch } from 'store/search';
 
 type Props = {
   data: Transaction;
 };
 
 const TxHistoryItem = (props: Props) => {
+  const dispatch = useDispatch();
   const theme = useTheme();
   const styles = useMemo(
     () => ({
@@ -60,7 +63,7 @@ const TxHistoryItem = (props: Props) => {
     toToken,
     receiveAmount,
     senderTimestamp,
-    explorerLink,
+    // explorerLink,
   } = props.data;
 
   // Separator with a unicode dot in the middle
@@ -205,7 +208,7 @@ const TxHistoryItem = (props: Props) => {
         <CardActionArea
           disableTouchRipple
           onClick={() => {
-            window.open(explorerLink, '_blank');
+            dispatch(setSearch({ txHash, chain: fromChain }));
           }}
         >
           <CardHeader
