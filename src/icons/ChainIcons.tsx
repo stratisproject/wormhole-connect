@@ -73,7 +73,9 @@ const iconMap: { [key in Chain]?: React.JSX.Element } = {
   CreditCoin: CreditCoin(),
   Monad: MONAD(),
   Moca: MOCA(),
+  Sepolia: ETH(),
   Xertra: STRAX(),
+  Auroria: STRAX(),
 };
 
 function isBuiltinChainIcon(icon?: Chain | string): icon is Chain {
