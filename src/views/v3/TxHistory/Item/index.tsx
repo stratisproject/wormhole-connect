@@ -64,6 +64,7 @@ const TxHistoryItem = (props: Props) => {
     receiveAmount,
     senderTimestamp,
     // explorerLink,
+    inProgress,
   } = props.data;
 
   // Separator with a unicode dot in the middle
@@ -221,6 +222,17 @@ const TxHistoryItem = (props: Props) => {
               >
                 <span>Transaction {chainExplorerLink}</span>
                 <span>{transactionDateTime}</span>
+              </Typography>
+            }
+            subheader={
+              <Typography
+                color={
+                  inProgress
+                    ? theme.palette.warning.light
+                    : theme.palette.primary.light
+                }
+              >
+                {inProgress ? 'In progress' : 'Completed'}
               </Typography>
             }
           />
