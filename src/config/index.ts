@@ -107,7 +107,7 @@ export function buildConfig(
     mayanApi: 'https://explorer-api.mayan.finance',
     lifiExplorerUrl: 'https://li.quest',
     wormholeApi: {
-      Mainnet: 'https://api.wormhole.xertra.com',
+      Mainnet: 'https://api.wormhole.xertra.com/',
       Testnet: 'https://test.api.wormhole.xertra.com/',
       Devnet: '',
     }[network],
