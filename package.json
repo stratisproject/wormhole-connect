@@ -86,7 +86,7 @@
     "@xertraplatform/wormhole-sdk-icons": "^1.0.7",
     "@xertraplatform/wormhole-sdk-route-ntt": "^1.0.1",
     "@xertraplatform/wormhole-sdk-solana": "^1.0.7",
-    "@xertraplatform/wormhole-sdk-solana-cctp": "^1.0.6",
+    "@xertraplatform/wormhole-sdk-solana-cctp": "^1.0.7",
     "@xertraplatform/wormhole-sdk-solana-core": "^1.0.7",
     "@xertraplatform/wormhole-sdk-solana-ntt": "^1.0.1",
     "@xertraplatform/wormhole-sdk-sui": "^1.0.7",
