@@ -158,6 +158,8 @@ export function buildConfig(
 
     // Transaction settings
     transactionSettings: customConfig?.transactionSettings || {},
+
+    customEvmWallets: customConfig.customEvmWallets,
   };
 }
 

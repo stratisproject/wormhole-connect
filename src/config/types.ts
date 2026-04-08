@@ -19,6 +19,8 @@ import type {
   WormholeConnectEventHandler,
 } from 'telemetry/types';
 
+import type { Wallet } from 'utils/wallet/types';
+
 import type RouteOperator from 'routes/operator';
 import type { UiConfig } from './ui';
 import type { TransferInfo } from 'utils/sdkv2';
@@ -161,6 +163,8 @@ export interface WormholeConnectConfig {
 
   // Transaction settings (e.g. priority / gas fees)
   transactionSettings?: TransactionSettings;
+
+  customEvmWallets?: { [key: string]: Wallet };
 }
 
 // This is the exported config value used throughout the code base
@@ -213,6 +217,8 @@ export interface InternalConfig<N extends Network> {
   guardianSet: GuardianSetData;
 
   transactionSettings: TransactionSettings;
+
+  customEvmWallets?: { [key: string]: Wallet };
 }
 
 export type TokenConfig = {

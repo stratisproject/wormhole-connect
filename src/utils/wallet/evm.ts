@@ -76,6 +76,7 @@ export const getWallets = () => {
           }),
         }
       : {}),
+    ...(config.customEvmWallets || {}),
   };
 };
 
