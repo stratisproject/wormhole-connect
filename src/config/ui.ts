@@ -1,6 +1,8 @@
 import type { Chain } from '@xertraplatform/wormhole-sdk';
 import type { Alignment } from 'components/Header';
 
+import type { Web3AuthOptions } from '@web3auth/modal';
+
 export type UiConfig = {
   title?: string;
   cta?: {
@@ -15,6 +17,8 @@ export type UiConfig = {
   partnerLogo?: string;
   walletConnectProjectId?: string;
   previewMode?: boolean; // Disables making transfers
+
+  web3AuthOptions?: Web3AuthOptions;
 
   getHelpUrl?: string;
 

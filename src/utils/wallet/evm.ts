@@ -20,6 +20,8 @@ import config from 'config';
 import * as ethers from 'ethers';
 import { sleep } from 'utils';
 
+import { Web3AuthWallet } from './Web3AuthWallet';
+
 type ChainRpcUrls = (typeof DEFAULT_CHAINS)[0]['rpcUrls']['default'];
 
 const getRpcForChain = (
@@ -73,6 +75,13 @@ export const getWallets = () => {
             connectorOptions: {
               projectId: config.ui.walletConnectProjectId,
             },
+          }),
+        }
+      : {}),
+    ...(config.ui.web3AuthOptions
+      ? {
+          web3Auth: new Web3AuthWallet({
+            connectorOptions: config.ui.web3AuthOptions,
           }),
         }
       : {}),
