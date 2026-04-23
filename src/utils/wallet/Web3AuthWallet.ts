@@ -20,7 +20,6 @@ import {
   EtherspotBundler,
 } from '@etherspot/prime-sdk';
 
-import { ChainId } from '@wormhole-labs/wallet-aggregator-core';
 import type { EVMWalletConfig } from '@wormhole-labs/wallet-aggregator-evm';
 import { EVMWallet } from '@wormhole-labs/wallet-aggregator-evm';
 import type { Signer } from 'ethers';
