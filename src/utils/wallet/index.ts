@@ -6,6 +6,7 @@ import config from 'config';
 
 export * from './types';
 export type { WormholeConnectWalletProvider } from './types';
+import type { WalletData as WalletDataStore } from 'store/wallet';
 
 import type {
   Network,
@@ -14,6 +15,7 @@ import type {
   Platform,
 } from '@xertraplatform/wormhole-sdk';
 import { chainToPlatform } from '@xertraplatform/wormhole-sdk';
+import { nativeChainIds } from '@xertraplatform/wormhole-sdk-base';
 
 import type {
   EvmUnsignedTransaction,
@@ -33,6 +35,25 @@ export enum TransferWallet {
   SENDING = 'sending',
   RECEIVING = 'receiving',
 }
+
+/**
+ * Hack function to check if smart account wallet supports selected chain
+ */
+export const smartAccountSupportsChain = (
+  wallet?: WalletDataStore,
+  chain?: Chain,
+) => {
+  if (!wallet || !chain || wallet.name !== 'Web3Auth SmartAccount') {
+    return true;
+  }
+
+  const chainId = nativeChainIds.networkChainToNativeChainId(
+    config.network,
+    chain as any,
+  );
+
+  return config.ui.etherspotOptions?.chainId === chainId;
+};
 
 export const walletAcceptedChains = (
   platform: Platform | undefined,

@@ -67,7 +67,7 @@ export function fetchSolanaOptions() {
           network: tag,
           options: {
             projectId: config.ui.walletConnectProjectId,
-            customStoragePrefix: 'wh-connect-solana-adapter',
+            // customStoragePrefix: 'wh-connect-solana-adapter',
           },
         }),
         connection,

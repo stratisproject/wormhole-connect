@@ -1,0 +1,83 @@
+diff --git a/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.d.ts b/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.d.ts
+index 901892a..6f4330c 100644
+--- a/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.d.ts
++++ b/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.d.ts
+@@ -3,6 +3,7 @@ export declare const AddressZero = "0x0000000000000000000000000000000000000000";
+ export type NotPromise<T> = {
+     [P in keyof T]: Exclude<T[P], Promise<any>>;
+ };
++export declare function packUint(high128: any, low128: any): string;
+ export declare function packUserOp(op: NotPromise<UserOperationStruct>, forSignature?: boolean): string;
+ export declare function getUserOpHash(op: NotPromise<UserOperationStruct>, entryPoint: string, chainId: number): string;
+ interface DecodedError {
+diff --git a/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.js b/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.js
+index bc08e96..afafa41 100644
+--- a/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.js
++++ b/node_modules/@etherspot/prime-sdk/dist/sdk/common/ERC4337Utils.js
+@@ -21,12 +21,21 @@ function encode(typevalues, forSignature) {
+     const values = typevalues.map((typevalue) => typevalue.type === 'bytes' && forSignature ? (0, utils_1.keccak256)(typevalue.val) : typevalue.val);
+     return utils_1.defaultAbiCoder.encode(types, values);
+ }
++function packUint(high128, low128) {
++  const high = BigInt(high128);
++  const low = BigInt(low128);
++
++  const packed = (high << BigInt(128)) + low;
++
++  return utils_1.hexZeroPad(utils_1.hexlify(packed), 32);
++}
++exports.packUint = packUint
+ function packUserOp(op, forSignature = true) {
+     if (forSignature) {
+         return utils_1.defaultAbiCoder.encode(['address', 'uint256', 'bytes32', 'bytes32',
+-            'uint256', 'uint256', 'uint256', 'uint256', 'uint256',
++            'bytes32', 'uint256', 'bytes32',
+             'bytes32'], [op.sender, op.nonce, (0, utils_1.keccak256)(op.initCode), (0, utils_1.keccak256)(op.callData),
+-            op.callGasLimit, op.verificationGasLimit, op.preVerificationGas, op.maxFeePerGas, op.maxPriorityFeePerGas,
++            packUint(op.verificationGasLimit, op.callGasLimit), op.preVerificationGas, packUint(op.maxPriorityFeePerGas, op.maxFeePerGas),
+             (0, utils_1.keccak256)(op.paymasterAndData)]);
+     }
+     else {
+diff --git a/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.d.ts b/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.d.ts
+index c5c0421..539e484 100644
+--- a/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.d.ts
++++ b/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.d.ts
+@@ -31,7 +31,10 @@ export declare enum NetworkNames {
+     Scroll = "scroll",
+     Ancient8Testnet = "ancient8Testnet",
+     Ancient8 = "ancient8",
+-    Amoy = "amoy"
++    Amoy = "amoy",
++    Xertra = "xertra",
++    Auroria = "auroria",
++    Local = "local"
+ }
+ export declare const SupportedNetworks: number[];
+ export declare const NETWORK_NAME_TO_CHAIN_ID: {
+diff --git a/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.js b/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.js
+index 818a6ad..3de72e4 100644
+--- a/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.js
++++ b/node_modules/@etherspot/prime-sdk/dist/sdk/network/constants.js
+@@ -35,8 +35,11 @@ var NetworkNames;
+     NetworkNames["Ancient8Testnet"] = "ancient8Testnet";
+     NetworkNames["Ancient8"] = "ancient8";
+     NetworkNames["Amoy"] = "amoy";
++    NetworkNames["Xertra"] = "xertra";
++    NetworkNames["Auroria"] = "auroria";
++    NetworkNames["Local"] = "local";
+ })(NetworkNames = exports.NetworkNames || (exports.NetworkNames = {}));
+-exports.SupportedNetworks = [1, 10, 14, 30, 31, 56, 97, 100, 114, 122, 123, 137, 2357, 5000, 5003, 8453, 10200, 20197, 42161, 43113, 43114, 59140, 59144, 80002, 84532, 421614, 534351, 534352, 11155111, 11155420, 28122024, 888888888];
++exports.SupportedNetworks = [1, 10, 14, 30, 31, 56, 97, 100, 114, 122, 123, 137, 2357, 5000, 5003, 8453, 10200, 20197, 42161, 43113, 43114, 59140, 59144, 80002, 84532, 421614, 534351, 534352, 11155111, 11155420, 28122024, 888888888, 105105, 205205, 1337];
+ exports.NETWORK_NAME_TO_CHAIN_ID = {
+     [NetworkNames.BaseSepolia]: 84532,
+     [NetworkNames.Sepolia]: 11155111,
+@@ -70,6 +73,9 @@ exports.NETWORK_NAME_TO_CHAIN_ID = {
+     [NetworkNames.Ancient8Testnet]: 28122024,
+     [NetworkNames.Ancient8]: 888888888,
+     [NetworkNames.Amoy]: 80002,
++    [NetworkNames.Xertra]: 105105,
++    [NetworkNames.Auroria]: 205205,
++    [NetworkNames.Local]: 1337,
+ };
+ exports.onRamperAllNetworks = ['OPTIMISM', 'POLYGON', 'ARBITRUM', 'FUSE', 'GNOSIS', 'ETHEREUM'];
+ exports.Networks = {

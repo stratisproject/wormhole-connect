@@ -3,6 +3,8 @@ import type { Alignment } from 'components/Header';
 
 import type { Web3AuthOptions } from '@web3auth/modal';
 
+import type { EtherspotOptions } from 'utils/wallet/Web3AuthWallet';
+
 export type UiConfig = {
   title?: string;
   cta?: {
@@ -19,6 +21,7 @@ export type UiConfig = {
   previewMode?: boolean; // Disables making transfers
 
   web3AuthOptions?: Web3AuthOptions;
+  etherspotOptions?: EtherspotOptions;
 
   getHelpUrl?: string;
 

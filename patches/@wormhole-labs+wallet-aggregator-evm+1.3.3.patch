@@ -1,0 +1,94 @@
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/cjs/constants.js b/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/cjs/constants.js
+index 38b0689..c529ef6 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/cjs/constants.js
++++ b/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/cjs/constants.js
+@@ -29,6 +29,7 @@ exports.EVM_CHAINS = {
+     worldchain: 480,
+     unichain: 130,
+     monad: 143,
++    xertra: 105105,
+ };
+ exports.EVM_CHAINS_TESTNET = {
+     ethereum: 17000,
+@@ -54,6 +55,7 @@ exports.EVM_CHAINS_TESTNET = {
+     worldchain: 4801,
+     unichain: 1301,
+     monad: 10143,
++    auroria: 105105,
+ };
+ const invertMap = (map) => Object.entries(map).reduce((obj, [name, id]) => {
+     return Object.assign(obj, { [id]: name });
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/esm/constants.js b/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/esm/constants.js
+index 6e74c5c..f13b04c 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/esm/constants.js
++++ b/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/esm/constants.js
+@@ -24,6 +24,7 @@ export const EVM_CHAINS = {
+     worldchain: 480,
+     unichain: 130,
+     monad: 143,
++    xertra: 105105,
+ };
+ export const EVM_CHAINS_TESTNET = {
+     ethereum: 17000,
+@@ -49,6 +50,7 @@ export const EVM_CHAINS_TESTNET = {
+     worldchain: 4801,
+     unichain: 1301,
+     monad: 10143,
++    auroria: 205205
+ };
+ const invertMap = (map) => Object.entries(map).reduce((obj, [name, id]) => {
+     return Object.assign(obj, { [id]: name });
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/types/constants.d.ts b/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/types/constants.d.ts
+index bac85ef..1182657 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/types/constants.d.ts
++++ b/node_modules/@wormhole-labs/wallet-aggregator-evm/dist/types/constants.d.ts
+@@ -24,6 +24,7 @@ export declare const EVM_CHAINS: {
+     readonly worldchain: 480;
+     readonly unichain: 130;
+     readonly monad: 143;
++    readonly xertra: 105105,
+ };
+ export declare const EVM_CHAINS_TESTNET: {
+     readonly ethereum: 17000;
+@@ -49,8 +50,9 @@ export declare const EVM_CHAINS_TESTNET: {
+     readonly worldchain: 4801;
+     readonly unichain: 1301;
+     readonly monad: 10143;
++    readonly auroria: 205205;
+ };
+-export type EVMChainName = "ethereum" | "bsc" | "polygon" | "avalanche" | "oasis" | "aurora" | "fantom" | "karura" | "acala" | "klaytn" | "celo" | "moonbeam" | "neon" | "arbitrum" | "optimism" | "gnosis" | "base" | "scroll" | "blast" | "xlayer" | "mantle" | "worldchain" | "unichain" | "monad";
++export type EVMChainName = "ethereum" | "bsc" | "polygon" | "avalanche" | "oasis" | "aurora" | "fantom" | "karura" | "acala" | "klaytn" | "celo" | "moonbeam" | "neon" | "arbitrum" | "optimism" | "gnosis" | "base" | "scroll" | "blast" | "xlayer" | "mantle" | "worldchain" | "unichain" | "monad" | "xertra" | "auroria";
+ export declare const EVM_CHAIN_ID_TO_NAME: Record<number, EVMChainName>;
+ export declare const EVM_TESTNET_CHAIN_ID_TO_NAME: Record<number, EVMChainName>;
+ export declare function evmChainIdToChainId(evmChainId: number, network?: Network): ChainId;
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-evm/src/constants.ts b/node_modules/@wormhole-labs/wallet-aggregator-evm/src/constants.ts
+index a448036..0cf734b 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-evm/src/constants.ts
++++ b/node_modules/@wormhole-labs/wallet-aggregator-evm/src/constants.ts
+@@ -29,6 +29,7 @@ export const EVM_CHAINS = {
+   worldchain: 480,
+   unichain: 130,
+   monad: 143,
++  xertra: 105105,
+ } as const;
+ 
+ export const EVM_CHAINS_TESTNET = {
+@@ -55,6 +56,7 @@ export const EVM_CHAINS_TESTNET = {
+   worldchain: 4801,
+   unichain: 1301,
+   monad: 10143,
++  auroria: 205205,
+ } as const;
+ 
+ export type EVMChainName =
+@@ -81,7 +83,9 @@ export type EVMChainName =
+   | "mantle"
+   | "worldchain"
+   | "unichain"
+-  | "monad";
++  | "monad"
++  | "xertra"
++  | "auroria";
+ 
+ type Indexable = string | number | symbol;
+ 

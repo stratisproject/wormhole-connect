@@ -1,0 +1,146 @@
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-core/dist/cjs/constants.js b/node_modules/@wormhole-labs/wallet-aggregator-core/dist/cjs/constants.js
+index c51f6fa..3023c7c 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-core/dist/cjs/constants.js
++++ b/node_modules/@wormhole-labs/wallet-aggregator-core/dist/cjs/constants.js
+@@ -54,6 +54,7 @@ exports.CHAINS = {
+     unichain: 44,
+     worldchain: 45,
+     monad: 48,
++    xertra: 105,
+     wormchain: 3104,
+     cosmoshub: 4000,
+     evmos: 4001,
+@@ -70,6 +71,7 @@ exports.CHAINS = {
+     optimism_sepolia: 10005,
+     holesky: 10006,
+     polygon_sepolia: 10007,
++    auroria: 10205,
+ };
+ exports.CHAIN_ID_TO_NAME = Object.entries(exports.CHAINS).reduce((obj, [name, id]) => {
+     obj[id] = name; // eslint-disable-line
+@@ -134,6 +136,8 @@ exports.CHAIN_ID_HOLESKY = exports.CHAINS["holesky"];
+ exports.CHAIN_ID_POLYGON_SEPOLIA = exports.CHAINS["polygon_sepolia"];
+ exports.CHAIN_ID_UNICHAIN = exports.CHAINS["unichain"];
+ exports.CHAIN_ID_MONAD = exports.CHAINS["monad"];
++exports.CHAIN_ID_XERTRA = exports.CHAINS["xertra"]
++exports.CHAIN_ID_AURORIA = exports.CHAINS["auroria"]
+ function isChain(chain) {
+     if (typeof chain === "number") {
+         return chain in exports.CHAIN_ID_TO_NAME;
+@@ -178,7 +182,8 @@ function isEVMChain(chainId) {
+         chainId === exports.CHAIN_ID_XLAYER ||
+         chainId === exports.CHAIN_ID_MANTLE ||
+         chainId === exports.CHAIN_ID_UNICHAIN ||
+-        chainId === exports.CHAIN_ID_MONAD);
++        chainId === exports.CHAIN_ID_MONAD) ||
++        chainId === exports.CHAIN_ID_XERTRA;
+ }
+ function isCosmWasmChain(chainId) {
+     return (chainId === exports.CHAIN_ID_TERRA ||
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-core/dist/esm/constants.js b/node_modules/@wormhole-labs/wallet-aggregator-core/dist/esm/constants.js
+index 1fd8019..9dbad9d 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-core/dist/esm/constants.js
++++ b/node_modules/@wormhole-labs/wallet-aggregator-core/dist/esm/constants.js
+@@ -42,6 +42,7 @@ export const CHAINS = {
+     unichain: 44,
+     worldchain: 45,
+     monad: 48,
++    xertra: 105,
+     wormchain: 3104,
+     cosmoshub: 4000,
+     evmos: 4001,
+@@ -58,6 +59,7 @@ export const CHAINS = {
+     optimism_sepolia: 10005,
+     holesky: 10006,
+     polygon_sepolia: 10007,
++    auroria: 10205,
+ };
+ export const CHAIN_ID_TO_NAME = Object.entries(CHAINS).reduce((obj, [name, id]) => {
+     obj[id] = name; // eslint-disable-line
+@@ -122,6 +124,8 @@ export const CHAIN_ID_HOLESKY = CHAINS["holesky"];
+ export const CHAIN_ID_POLYGON_SEPOLIA = CHAINS["polygon_sepolia"];
+ export const CHAIN_ID_UNICHAIN = CHAINS["unichain"];
+ export const CHAIN_ID_MONAD = CHAINS["monad"];
++export const CHAIN_ID_XERTRA = CHAINS["xertra"]
++export const CHAIN_ID_AURORIA = CHAINS["auroria"]
+ export function isChain(chain) {
+     if (typeof chain === "number") {
+         return chain in CHAIN_ID_TO_NAME;
+@@ -166,7 +170,8 @@ export function isEVMChain(chainId) {
+         chainId === CHAIN_ID_XLAYER ||
+         chainId === CHAIN_ID_MANTLE ||
+         chainId === CHAIN_ID_UNICHAIN ||
+-        chainId === CHAIN_ID_MONAD);
++        chainId === CHAIN_ID_MONAD) ||
++        chainId === CHAIN_ID_XERTRA;
+ }
+ export function isCosmWasmChain(chainId) {
+     return (chainId === CHAIN_ID_TERRA ||
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-core/dist/types/constants.d.ts b/node_modules/@wormhole-labs/wallet-aggregator-core/dist/types/constants.d.ts
+index c9e34f1..6acdadb 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-core/dist/types/constants.d.ts
++++ b/node_modules/@wormhole-labs/wallet-aggregator-core/dist/types/constants.d.ts
+@@ -41,6 +41,7 @@ export declare const CHAINS: {
+     readonly unichain: 44;
+     readonly worldchain: 45;
+     readonly monad: 48;
++    readonly xertra: 105;
+     readonly wormchain: 3104;
+     readonly cosmoshub: 4000;
+     readonly evmos: 4001;
+@@ -57,6 +58,7 @@ export declare const CHAINS: {
+     readonly optimism_sepolia: 10005;
+     readonly holesky: 10006;
+     readonly polygon_sepolia: 10007;
++    readonly auroria: 10205;
+ };
+ export type ChainName = keyof typeof CHAINS;
+ export type ChainId = (typeof CHAINS)[ChainName];
+@@ -122,6 +124,8 @@ export declare const CHAIN_ID_HOLESKY: 10006;
+ export declare const CHAIN_ID_POLYGON_SEPOLIA: 10007;
+ export declare const CHAIN_ID_UNICHAIN: 44;
+ export declare const CHAIN_ID_MONAD: 48;
++export declare const CHAIN_ID_XERTRA: 105;
++export declare const CHAIN_ID_AURORIA: 10205;
+ export type Network = "MAINNET" | "TESTNET" | "DEVNET";
+ export declare function isChain(chain: number | string): chain is ChainId | ChainName;
+ export declare function toChainId(chainName: ChainName): ChainId;
+diff --git a/node_modules/@wormhole-labs/wallet-aggregator-core/src/constants.ts b/node_modules/@wormhole-labs/wallet-aggregator-core/src/constants.ts
+index f803f2a..5bc623c 100644
+--- a/node_modules/@wormhole-labs/wallet-aggregator-core/src/constants.ts
++++ b/node_modules/@wormhole-labs/wallet-aggregator-core/src/constants.ts
+@@ -42,6 +42,7 @@ export const CHAINS = {
+   unichain: 44,
+   worldchain: 45,
+   monad: 48,
++  xertra: 105,
+   wormchain: 3104,
+   cosmoshub: 4000,
+   evmos: 4001,
+@@ -58,6 +59,7 @@ export const CHAINS = {
+   optimism_sepolia: 10005,
+   holesky: 10006,
+   polygon_sepolia: 10007,
++  auroria: 10205,
+ } as const;
+ 
+ export type ChainName = keyof typeof CHAINS;
+@@ -134,6 +136,8 @@ export const CHAIN_ID_HOLESKY = CHAINS["holesky"];
+ export const CHAIN_ID_POLYGON_SEPOLIA = CHAINS["polygon_sepolia"];
+ export const CHAIN_ID_UNICHAIN = CHAINS["unichain"];
+ export const CHAIN_ID_MONAD = CHAINS["monad"];
++export const CHAIN_ID_XERTRA = CHAINS["xertra"]
++export const CHAIN_ID_AURORIA = CHAINS["auroria"]
+ 
+ export type Network = "MAINNET" | "TESTNET" | "DEVNET";
+ 
+@@ -186,7 +190,8 @@ export function isEVMChain(chainId: ChainId): boolean {
+     chainId === CHAIN_ID_XLAYER ||
+     chainId === CHAIN_ID_MANTLE ||
+     chainId === CHAIN_ID_UNICHAIN ||
+-    chainId === CHAIN_ID_MONAD
++    chainId === CHAIN_ID_MONAD ||
++    chainId === CHAIN_ID_XERTRA
+   );
+ }
+ 

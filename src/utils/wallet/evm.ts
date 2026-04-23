@@ -85,6 +85,16 @@ export const getWallets = () => {
           }),
         }
       : {}),
+    ...(config.ui.web3AuthOptions && config.ui.etherspotOptions
+      ? {
+          web3AuthSA: new Web3AuthWallet({
+            connectorOptions: {
+              ...config.ui.web3AuthOptions,
+              etherspotOptions: config.ui.etherspotOptions,
+            },
+          }),
+        }
+      : {}),
     ...(config.customEvmWallets || {}),
   };
 };

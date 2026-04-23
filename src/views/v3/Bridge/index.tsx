@@ -45,7 +45,7 @@ import {
 } from 'store/transferInput';
 import { copyTextToClipboard } from 'utils';
 import { isTransferValid, useValidate } from 'utils/transferValidation';
-import { TransferWallet } from 'utils/wallet';
+import { TransferWallet, smartAccountSupportsChain } from 'utils/wallet';
 import { getFilteredChains } from 'utils/sdkv2';
 import { applyTokenWhitelist } from 'utils/tokenListUtils';
 import WalletConnector from 'views/v3/Bridge/WalletConnector';
@@ -259,6 +259,14 @@ function Bridge(props: BridgeProps) {
     return undefined;
   }, [destChain, receivingWallet]);
 
+  const sendingWalletSupportsChain = useMemo(() => {
+    return smartAccountSupportsChain(sendingWallet, sourceChain);
+  }, [sendingWallet, sourceChain]);
+
+  const receivingWalletSupportsChain = useMemo(() => {
+    return smartAccountSupportsChain(receivingWallet, destChain);
+  }, [receivingWallet, destChain]);
+
   const balances = useGetTokenBalances({
     source: sourceBalanceRequest,
     destination: destBalanceRequest,
@@ -456,7 +464,9 @@ function Bridge(props: BridgeProps) {
     isFetchingQuotes ||
     !hasEnteredAmount ||
     isTransactionInProgress ||
-    !!amountValidation.error;
+    !!amountValidation.error ||
+    !sendingWalletSupportsChain ||
+    !receivingWalletSupportsChain;
 
   // Review transaction button is shown only when everything is ready
   const confirmTransactionButton = useMemo(() => {
@@ -488,6 +498,10 @@ function Bridge(props: BridgeProps) {
             <CircularProgress color="inherit" size={16} thickness={4} />
             {mobile ? 'Refreshing' : 'Refreshing quote'}
           </Typography>
+        ) : !sendingWalletSupportsChain || !receivingWalletSupportsChain ? (
+          <Typography textTransform="none">
+            Selected chain not supported
+          </Typography>
         ) : (
           <Typography textTransform="none">
             {mobile ? 'Confirm' : 'Confirm transaction'}
@@ -500,6 +514,7 @@ function Bridge(props: BridgeProps) {
     isTransactionInProgress,
     mobile,
     isFetchingQuotes,
+    sendingWalletSupportsChain,
     onConfirm,
   ]);
 
@@ -511,6 +526,10 @@ function Bridge(props: BridgeProps) {
       ? 'Please select a source asset'
       : !destChain || !destToken
       ? 'Please select a destination asset'
+      : !sendingWalletSupportsChain
+      ? 'Sending wallet does not support selected chain'
+      : !receivingWalletSupportsChain
+      ? 'Receiving wallet does not support selected chain'
       : !hasEnteredAmount
       ? 'Please enter an amount'
       : isFetchingQuotes
