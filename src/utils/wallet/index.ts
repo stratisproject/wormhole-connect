@@ -52,7 +52,7 @@ export const smartAccountSupportsChain = (
     chain as any,
   );
 
-  return config.ui.etherspotOptions?.chainId === chainId;
+  return Number(config.ui.etherspotOptions!.chainId) === Number(chainId);
 };
 
 export const walletAcceptedChains = (
