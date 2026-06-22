@@ -22,6 +22,7 @@ export type TransferValidations = {
   receivingWallet: ValidationErr;
   fromChain: ValidationErr;
   toChain: ValidationErr;
+  destToken: ValidationErr;
   amount: ValidationErr;
   toNativeToken: ValidationErr;
   relayerFee: ValidationErr;
@@ -70,6 +71,7 @@ function getInitialState(): TransferInputState {
     validations: {
       fromChain: '',
       toChain: '',
+      destToken: '',
       amount: '',
       toNativeToken: '',
       sendingWallet: '',
