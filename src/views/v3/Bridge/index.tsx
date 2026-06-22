@@ -441,6 +441,22 @@ function Bridge(props: BridgeProps) {
     );
   }, [styles.copyIcon, styles.doneIcon, errorCopied, txError, txErrorInternal]);
 
+  // Warn when the selected destination token would arrive as a Wormhole-wrapped
+  // token instead of the canonical asset (e.g. BSC USDC -> Ethereum USDC).
+  const destTokenWarning = useMemo(() => {
+    if (!validations.destToken) {
+      return null;
+    }
+
+    return (
+      <Box sx={{ marginBottom: 2 }}>
+        <AlertBannerV3 error testId="dest-token-warning">
+          {validations.destToken}
+        </AlertBannerV3>
+      </Box>
+    );
+  }, [validations.destToken]);
+
   const transactionInfo = useMemo(() => {
     if (!txInfo) {
       return null;
@@ -600,6 +616,7 @@ function Bridge(props: BridgeProps) {
               anchorEl={popoverAnchorRef.current}
             />
           </Stack>
+          {destTokenWarning}
           <Box component="span" sx={styles.ctaContainer}>
             {hasConnectedWallets ? (
               <Tooltip title={confirmButtonTooltip}>

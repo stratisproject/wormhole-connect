@@ -18,6 +18,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useDebounce } from 'use-debounce';
 import type { Chain } from '@xertraplatform/wormhole-sdk';
 import { amount as sdkAmount } from '@xertraplatform/wormhole-sdk';
+import type { TokenTuple } from 'config/tokens';
+import { isSameToken } from 'config/tokens';
 
 export const validateFromChain = (chain: Chain | undefined): ValidationErr => {
   if (!chain) return 'Select a source chain';
@@ -57,6 +59,56 @@ export const validateToChain = (
     )
       return `Must select ${requiredConfig.displayName} as either the source or destination chain`;
   }
+  return '';
+};
+
+/**
+ * Prevents transfers that would deliver a Wormhole-wrapped token instead of the
+ * canonical asset the user is likely expecting.
+ *
+ * Example: BSC USDC bridged via Wormhole Token Bridge to Ethereum does NOT arrive
+ * as canonical (Circle-issued) Ethereum USDC. It arrives as a Wormhole-wrapped
+ * representation that happens to share the "USDC" symbol. Receiving this wrapped
+ * token is almost never what the user intends, so we block it and explain why.
+ *
+ * The heuristic: the destination token is a Token Bridge wrapped token, and a
+ * different, canonical (non-wrapped) token with the same symbol already exists on
+ * the destination chain. In that case bridging would "change the chain" of the
+ * underlying asset and produce a token that masquerades as the canonical one.
+ */
+export const validateDestToken = (
+  sourceTokenTuple: TokenTuple | undefined,
+  destTokenTuple: TokenTuple | undefined,
+): ValidationErr => {
+  if (!sourceTokenTuple || !destTokenTuple) return '';
+
+  const sourceToken = config.tokens.get(sourceTokenTuple);
+  const destToken = config.tokens.get(destTokenTuple);
+  if (!sourceToken || !destToken) return '';
+
+  // Same-chain swaps don't change the underlying asset's chain.
+  if (sourceToken.chain === destToken.chain) return '';
+
+  // Only a concern when the destination token is a Wormhole Token Bridge wrapped token.
+  if (!destToken.isTokenBridgeWrappedToken) return '';
+
+  // If a different, canonical (non-wrapped) token with the same symbol exists on
+  // the destination chain, the wrapped token would be mistaken for it.
+  const canonicalEquivalent = config.tokens
+    .getAllForChain(destToken.chain)
+    .find(
+      (t) =>
+        !t.isTokenBridgeWrappedToken &&
+        t.symbol.toLowerCase() === destToken.symbol.toLowerCase() &&
+        !isSameToken(t, destToken),
+    );
+
+  if (canonicalEquivalent) {
+    const destChainName =
+      config.chains[destToken.chain]?.displayName ?? destToken.chain;
+    return `Bridging ${sourceToken.symbol} from ${sourceToken.chain} to ${destChainName} delivers a Wormhole-wrapped token, not canonical ${destToken.symbol}. Select a route that delivers native ${destToken.symbol} instead.`;
+  }
+
   return '';
 };
 
@@ -127,7 +179,7 @@ export const validateAll = async (
   relayData: RelayState,
   walletData: WalletState,
 ): Promise<TransferValidations> => {
-  const { fromChain, toChain, amount, route } = transferData;
+  const { fromChain, toChain, amount, route, token, destToken } = transferData;
 
   const { maxSwapAmt, toNativeToken } = relayData;
   const { sending, receiving } = walletData;
@@ -140,6 +192,7 @@ export const validateAll = async (
     receivingWallet: await validateWallet(receiving, toChain),
     fromChain: validateFromChain(fromChain),
     toChain: validateToChain(toChain, fromChain),
+    destToken: validateDestToken(token, destToken),
     amount: validateAmount(amount, sendingTokenBalance),
     toNativeToken: '',
     relayerFee: '',
